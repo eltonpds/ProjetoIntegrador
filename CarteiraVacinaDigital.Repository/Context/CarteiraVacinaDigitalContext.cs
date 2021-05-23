@@ -1,5 +1,4 @@
 ﻿using CarteiraVacinaDigital.Model_.Entities;
-
 using Microsoft.EntityFrameworkCore;
 
 namespace CarteiraVacinaDigital.Repository.Context

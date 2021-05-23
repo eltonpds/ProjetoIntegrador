@@ -1,5 +1,4 @@
 ﻿using CarteiraVacinaDigital.Model.Contracts;
-using CarteiraVacinaDigital.Model_.Contracts;
 using CarteiraVacinaDigital.Repository.Context;
 using System.Collections.Generic;
 
