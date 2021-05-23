@@ -3,7 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarteiraVacinaDigital", "CarteiraVacinaDigital\CarteiraVacinaDigital.csproj", "{A283A9B0-B561-46C2-B4C3-109D306BAA91}"
+=======
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarteiraVacinaDigital.Model", "CarteiraVacinaDigital.Model\CarteiraVacinaDigital.Model.csproj", "{F44C298F-D226-4ACE-A689-E2A25FE7034F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarteiraVacinaDigital.Repository", "CarteiraVacinaDigital.Repository\CarteiraVacinaDigital.Repository.csproj", "{256CFED1-8599-437D-986F-77D9CBA2FB00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarteiraVacinaDigital.Api", "CarteiraVacinaDigital.Api\CarteiraVacinaDigital.Api.csproj", "{E15A522E-4139-494B-810C-969CF93FB395}"
+>>>>>>> WebSite
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,10 +19,25 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+<<<<<<< HEAD
 		{A283A9B0-B561-46C2-B4C3-109D306BAA91}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{A283A9B0-B561-46C2-B4C3-109D306BAA91}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A283A9B0-B561-46C2-B4C3-109D306BAA91}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A283A9B0-B561-46C2-B4C3-109D306BAA91}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+		{F44C298F-D226-4ACE-A689-E2A25FE7034F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F44C298F-D226-4ACE-A689-E2A25FE7034F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F44C298F-D226-4ACE-A689-E2A25FE7034F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F44C298F-D226-4ACE-A689-E2A25FE7034F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{256CFED1-8599-437D-986F-77D9CBA2FB00}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{256CFED1-8599-437D-986F-77D9CBA2FB00}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{256CFED1-8599-437D-986F-77D9CBA2FB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{256CFED1-8599-437D-986F-77D9CBA2FB00}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E15A522E-4139-494B-810C-969CF93FB395}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E15A522E-4139-494B-810C-969CF93FB395}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E15A522E-4139-494B-810C-969CF93FB395}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E15A522E-4139-494B-810C-969CF93FB395}.Release|Any CPU.Build.0 = Release|Any CPU
+>>>>>>> WebSite
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

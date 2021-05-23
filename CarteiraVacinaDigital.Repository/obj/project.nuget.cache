@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "3OZhy09mA8Kaqra26t18foIuB2lSbe9lCzorvQHMQbtnrSeDKU1z+blmu5jMXrEVYYAdA77Zzna0x/yevMJWHg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\elton\\source\\repos\\CarteiraVacinaDigital\\CarteiraVacinaDigital.Repository\\CarteiraVacinaDigital.Repository.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\elton\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
