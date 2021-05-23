@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CarteiraVacinaDigital.Model_.Contracts
+namespace CarteiraVacinaDigital.Model.Contracts
 {
-    interface IBaseRepository<TEntity> : IDisposable where TEntity : class
+    public interface IBaseRepository<TEntity> : IDisposable where TEntity : class
     {
         void Adicionar(TEntity entity);
         TEntity ObterPorId(int id);
