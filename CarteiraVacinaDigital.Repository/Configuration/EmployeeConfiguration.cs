@@ -5,9 +5,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace CarteiraVacinaDigital.Repository.Configuration
 {
-    class FuncionarioConfiguration : IEntityTypeConfiguration<Funcionario>
+    class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
     {
-        public void Configure(EntityTypeBuilder<Funcionario> builder)
+        public void Configure(EntityTypeBuilder<Employee> builder)
         {
             builder.HasKey(f => f.Id);
 

@@ -5,7 +5,7 @@ namespace CarteiraVacinaDigital.Repository.Context
 {
     public class CarteiraVacinaDigitalContext : DbContext
     {
-        public DbSet<Funcionario> Funcionarios { get; set; }
+        public DbSet<Employee> Funcionarios { get; set; }
 
         public CarteiraVacinaDigitalContext(DbContextOptions options) : base(options)
         {

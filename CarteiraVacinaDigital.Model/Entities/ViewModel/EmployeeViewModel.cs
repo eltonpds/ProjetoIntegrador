@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace CarteiraVacinaDigital.Repository.Repository
+namespace CarteiraVacinaDigital.Model.Entities.ViewModel
 {
-    class FuncionarioRepository
+    class EmployeeViewModel
     {
     }
 }
