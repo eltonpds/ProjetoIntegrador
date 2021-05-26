@@ -12,5 +12,7 @@ namespace CarteiraVacinaDigital.Model.Entities
         public DateTime ManufacturingDate { get; set; }
         public DateTime Validate { get; set; }
         public string Lote { get; set; }
+        public Campaign Campaign { get; set; }
+        public int CampaignId { get; set; }
     }
 }
