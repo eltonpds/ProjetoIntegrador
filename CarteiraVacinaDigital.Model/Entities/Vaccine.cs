@@ -14,5 +14,6 @@ namespace CarteiraVacinaDigital.Model.Entities
         public string Lote { get; set; }
         public Campaign Campaign { get; set; }
         public int CampaignId { get; set; }
+        public ICollection<Calender> Calenders { get; set; }
     }
 }
