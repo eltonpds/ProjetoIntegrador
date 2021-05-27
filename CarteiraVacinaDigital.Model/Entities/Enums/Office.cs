@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarteiraVacinaDigital.Model.Entities.Enums
 {
-    public enum Cargo : int
+    public enum Office : int
     {
         Administrador,
         Tecnico,

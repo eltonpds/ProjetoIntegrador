@@ -1,4 +1,10 @@
+<<<<<<< Updated upstream
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.csprojAssemblyReference.cache
+=======
+C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\bin\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.deps.json
+C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\bin\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.dll
+C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\bin\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.pdb
+>>>>>>> Stashed changes
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.csproj.CoreCompileInputs.cache
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.AssemblyInfoInputs.cache
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Repository\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Repository.AssemblyInfo.cs
