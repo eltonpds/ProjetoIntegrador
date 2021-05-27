@@ -6,3 +6,4 @@ C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Model\ob
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Model\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Model.AssemblyInfo.cs
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Model\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Model.dll
 C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Model\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Model.pdb
+C:\Users\elton\source\repos\CarteiraVacinaDigital\CarteiraVacinaDigital.Model\obj\Debug\netstandard2.0\CarteiraVacinaDigital.Model.csprojAssemblyReference.cache

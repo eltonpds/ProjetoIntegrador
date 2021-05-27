@@ -5,4 +5,10 @@
     <RootNamespace>CarteiraVacinaDigital.Model</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Entities\NovaPasta\**" />
+    <EmbeddedResource Remove="Entities\NovaPasta\**" />
+    <None Remove="Entities\NovaPasta\**" />
+  </ItemGroup>
+
 </Project>
