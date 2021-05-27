@@ -1,5 +1,0 @@
-{
-  "ConnectionStrings": {
-    "CarteiraVacinaDigitalDB": "server=localhost; uid=root; pwd=123456; database=CarteiraVacinaDB"
-  }     
-}
