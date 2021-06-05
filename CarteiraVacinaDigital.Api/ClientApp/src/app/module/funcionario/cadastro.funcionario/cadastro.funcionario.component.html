@@ -1,0 +1,87 @@
+<h1>Cadastro Funcionário</h1>
+
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputName">Nome</label>
+      <input type="text"
+              name="name"
+              class="form-control"
+              id="inputName"
+              [(ngModel)]="employee.name"
+              #name="ngModel"
+              [ngClass]=""
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email</label>
+      <input type="email"
+      name="email"
+      class="form-control"
+      id="inputEmail"
+      [(ngModel)]="employee.email"
+      #inputEmail="ngModel"
+      required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputPassword">Senha</label>
+      <input type="password"
+              name="password"
+              class="form-control"
+              id="inputPassword"
+              [(ngModel)]="employee.password"
+              #password="ngModel"
+              required />
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Endereço</label>
+    <input type="text"
+            name="address"
+            class="form-control"
+            id="inputAddress"
+            [(ngModel)]="employee.adress"
+            #adress = "ngModel"
+            required />
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Cidade</label>
+      <input type="text"
+              name="city"
+              class="form-control"
+              id="inputCity"
+              [(ngModel)]="employee.city"
+              #city="ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Estado</label>
+      <select id="inputState" class="form-control">
+        <option selected>UF</option>
+        <option>...</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputZip">CEP</label>
+      <input type="text"
+              class="form-control"
+              name="cep"
+              id="inputZip"
+              [(ngModel)]="employee.cep"
+              #cep="ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputZip">Cargo</label>
+      <select id="inputOffice" class="form-control">
+        <option selected>Selecione o cargo</option>
+        <option>...</option>
+      </select>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
+  <button type="submit" class="btn btn-primary float-right" (click)="register()">Cadastrar</button>
+</form>

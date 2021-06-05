@@ -1,8 +1,12 @@
+using CarteiraVacinaDigital.Model_.Contracts;
+using CarteiraVacinaDigital.Repository.Context;
+using CarteiraVacinaDigital.Repository.Repository;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -12,7 +16,9 @@ namespace CarteiraVacinaDigital.Api
     {
         public Startup(IConfiguration configuration)
         {
-            Configuration = configuration;
+            var builder = new ConfigurationBuilder();
+            builder.AddJsonFile("config.json", optional: false, reloadOnChange: true);
+            Configuration = builder.Build();
         }
 
         public IConfiguration Configuration { get; }
@@ -20,8 +26,16 @@ namespace CarteiraVacinaDigital.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .AddJsonOptions(options =>
+                    options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize);
 
+            var connectionString = Configuration.GetConnectionString("CarteiraVacinaDigitalDB");
+            services.AddDbContext<CarteiraVacinaDigitalContext>
+                (option => option.UseLazyLoadingProxies().UseMySql
+                (connectionString, m => m.MigrationsAssembly("CarteiraVacinaDigital.Repository")));
+
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
@@ -64,7 +78,7 @@ namespace CarteiraVacinaDigital.Api
                 if (env.IsDevelopment())
                 {
                     //spa.UseAngularCliServer(npmScript: "start");
-                    spa.UseProxyToSpaDevelopmentServer("localhost:4200");
+                    spa.UseProxyToSpaDevelopmentServer("http://localhost:4200/");
                 }
             });
         }
