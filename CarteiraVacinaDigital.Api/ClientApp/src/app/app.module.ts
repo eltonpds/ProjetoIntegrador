@@ -1,30 +1,39 @@
-import { FuncionarioComponent } from './module/funcionario/funcionario.component';
-import { HomeComponent } from './home/home.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './/app-routing.module';
+import { CommonModule } from '@angular/common';
 
+import { PacientModule } from './module/paciente/pacient.module';
+import { FuncionarioModule } from './module/funcionario/funcionario.module';
+import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { FooterComponent } from './layout/footer/footer.component';
+import { AsideComponent } from './layout/aside/aside.component';
+import { VacinaModule } from './module/vacina/vacina.module';
 import { LoginComponent } from './core/login/login.component';
-import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LoginComponent,
     HomeComponent,
-    FuncionarioComponent
+    AsideComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    CommonModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    FuncionarioModule,
+    PacientModule,
+    ReactiveFormsModule,
+    VacinaModule
   ],
   providers: [],
   bootstrap: [AppComponent]

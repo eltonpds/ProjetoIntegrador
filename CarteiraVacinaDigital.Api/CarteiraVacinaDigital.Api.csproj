@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\CarteiraVacinaDigital.Repository\CarteiraVacinaDigital.Repository.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="config.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

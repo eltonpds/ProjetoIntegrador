@@ -1,4 +1,5 @@
 ﻿using CarteiraVacinaDigital.Model_.Entities;
+using CarteiraVacinaDigital.Repository.Configuration;
 using Microsoft.EntityFrameworkCore;
 
 namespace CarteiraVacinaDigital.Repository.Context
@@ -14,7 +15,9 @@ namespace CarteiraVacinaDigital.Repository.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
+            modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
+
+            base.OnModelCreating(modelBuilder);
         }
     }
 

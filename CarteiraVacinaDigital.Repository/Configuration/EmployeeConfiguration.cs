@@ -12,7 +12,7 @@ namespace CarteiraVacinaDigital.Repository.Configuration
             builder.HasKey(f => f.Id);
 
             builder
-                .Property(f => f.Nome)
+                .Property(f => f.Name)
                 .IsRequired();
 
             builder
@@ -20,7 +20,7 @@ namespace CarteiraVacinaDigital.Repository.Configuration
                 .IsRequired();
 
             builder
-                .Property(f => f.Senha)
+                .Property(f => f.Password)
                 .IsRequired();
 
             builder
@@ -30,6 +30,18 @@ namespace CarteiraVacinaDigital.Repository.Configuration
             builder
                 .Property(f => f.Coren)
                 .IsRequired();
+
+            builder
+                .Property(f => f.Adress);
+
+            builder
+                .Property(f => f.City);
+
+            builder
+                .Property(f => f.State);
+
+            builder
+                .Property(f => f.Cep);
         }
     }
 }

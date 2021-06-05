@@ -1,14 +1,20 @@
-﻿namespace CarteiraVacinaDigital.Model_.Entities
+﻿using CarteiraVacinaDigital.Model.Entities.Enums;
+
+namespace CarteiraVacinaDigital.Model_.Entities
 {
     public class Employee
     {
         public int Id { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
-        public string Senha { get; set; }
+        public string Password { get; set; }
         public string Cpf { get; set; }
         public string Coren { get; set; }
-        public Cargo Perfil { get; set; }
+        public string Adress { get; set; }
+        public string City { get; set; }
+        public StateEnum State { get; set; }
+        public string Cep { get; set; }
+        public OfficeEnum Perfil { get; set; }
 
     }
 }

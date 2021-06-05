@@ -1,6 +1,9 @@
-﻿namespace CarteiraVacinaDigital.Model_.Contracts
+﻿using CarteiraVacinaDigital.Model.Contracts;
+using CarteiraVacinaDigital.Model_.Entities;
+
+namespace CarteiraVacinaDigital.Model_.Contracts
 {
-    interface IEmployeeRepository
+    public interface IEmployeeRepository: IBaseRepository<Employee>
     {
     }
 }

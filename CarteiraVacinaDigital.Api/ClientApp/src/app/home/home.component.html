@@ -1,9 +1,15 @@
-<div class="container">
-  <div *ngFor="let f of funcao" class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">{{f.name}}</h5>
-      <p class="card-text"></p>
-      <a href="#" class="btn btn-primary" routerLink="/{{f.url}}">Acessar</a>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3">
+      <nav class="nav flex-column">
+        <a class="nav-link active" [routerLink]="['/registrarvacina']">Registrar Vacina
+        </a>
+        <a class="nav-link" routerLink="/paciente">Paciente</a>
+        <a class="nav-link" routerLink="/funcionario">Funcionário</a>
+      </nav>
+    </div>
+    <div class="col-md-9">
+        <router-outlet></router-outlet>
     </div>
   </div>
 </div>
