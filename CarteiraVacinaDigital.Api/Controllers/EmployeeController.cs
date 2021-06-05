@@ -23,7 +23,11 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
-                _employeeRepository.Adicionar(employee);
+                var employeeResult = _employeeRepository.GetByCpf(employee.Cpf);
+                if (employeeResult.Cpf == employee.Cpf)
+                    return BadRequest("CPF já cadastrado");
+
+                _employeeRepository.Insert(employee);
                 return Ok();
             }
             catch(Exception ex)

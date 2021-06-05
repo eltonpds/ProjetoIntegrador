@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CarteiraVacinaDigital.Repository.Configuration
 {
-    class OfficeConfiguration
+    class PacientConfiguration
     {
     }
 }

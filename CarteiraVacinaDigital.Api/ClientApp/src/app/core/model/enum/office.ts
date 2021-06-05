@@ -1,8 +1,8 @@
 export enum Office {
-  Administrador = 'Administrator',
-  Tecnician = 'Técnico',
-  Nurse = 'Enfermeira',
-  Doctor = 'Doutor(a)',
-  Apprentic = 'Aprendiz',
-  Intern = 'Aprendiz'
+  Administrador = 1,
+  Tecnician = 2,
+  Nurse = 3,
+  Doctor = 4,
+  Apprentic = 5,
+  Intern = 6
 }
