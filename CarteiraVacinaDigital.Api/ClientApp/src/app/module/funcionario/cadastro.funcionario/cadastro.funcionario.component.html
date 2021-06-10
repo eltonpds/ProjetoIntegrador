@@ -5,7 +5,7 @@
     <div class="form-group col-md-12">
       <label for="inputName">Nome</label>
       <input type="text"
-              name="name"
+              name="inputName"
               class="form-control"
               id="inputName"
               [(ngModel)]="employee.name"
@@ -16,39 +16,61 @@
     <div class="form-group col-md-6">
       <label for="inputEmail">Email</label>
       <input type="email"
-      name="email"
+      name="inputEmail"
       class="form-control"
       id="inputEmail"
       [(ngModel)]="employee.email"
       #inputEmail="ngModel"
       required />
     </div>
-    <div class="form-group col-md-6">
+    <div class="form-group col-md-3">
       <label for="inputPassword">Senha</label>
       <input type="password"
-              name="password"
+              name="inputPassword"
               class="form-control"
               id="inputPassword"
               [(ngModel)]="employee.password"
               #password="ngModel"
               required />
     </div>
+    <div class="form-group col-md-3">
+      <label for="inputCPF">CPF</label>
+      <input type="text"
+              name="inputCPF"
+              class="form-control"
+              id="inputCPF"
+              [(ngModel)]="employee.cpf"
+              #cpf="ngModel"
+              required />
+    </div>
   </div>
-  <div class="form-group">
-    <label for="inputAddress">Endereço</label>
-    <input type="text"
-            name="address"
-            class="form-control"
-            id="inputAddress"
-            [(ngModel)]="employee.adress"
-            #adress = "ngModel"
-            required />
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Endereço</label>
+      <input type="text"
+              name="inputAddress"
+              class="form-control"
+              id="inputAddress"
+              [(ngModel)]="employee.adress"
+              #adress = "ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCoren">Coren</label>
+      <input type="text"
+              name="inputCoren"
+              class="form-control"
+              id="inputCoren"
+              [(ngModel)]="employee.coren"
+              #coren = "ngModel"
+              required />
+    </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
       <label for="inputCity">Cidade</label>
       <input type="text"
-              name="city"
+              name="inputCity"
               class="form-control"
               id="inputCity"
               [(ngModel)]="employee.city"
@@ -59,7 +81,7 @@
       <label for="inputState">Estado</label>
       <select id="inputState" class="form-control">
         <option selected>UF</option>
-        <option>...</option>
+        <option></option>
       </select>
     </div>
   </div>
@@ -68,7 +90,7 @@
       <label for="inputZip">CEP</label>
       <input type="text"
               class="form-control"
-              name="cep"
+              name="inputZip"
               id="inputZip"
               [(ngModel)]="employee.cep"
               #cep="ngModel"
@@ -78,7 +100,7 @@
       <label for="inputZip">Cargo</label>
       <select id="inputOffice" class="form-control">
         <option selected>Selecione o cargo</option>
-        <option>...</option>
+        <option *ngFor="let item of office"></option>
       </select>
     </div>
   </div>

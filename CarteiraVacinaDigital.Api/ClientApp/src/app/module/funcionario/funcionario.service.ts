@@ -8,7 +8,9 @@ import { Employee } from 'src/app/core/model/employee';
   providedIn: 'root'
 })
 export class FuncionarioService {
+
   private _baseUrl: string;
+  public employee: Employee[];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl:string) {
     this._baseUrl = baseUrl;
@@ -17,6 +19,10 @@ export class FuncionarioService {
    get headers(): HttpHeaders {
      return new HttpHeaders().set('content-type', 'application/json');
    }
+
+   getEmployee():Observable<Employee[]> {
+    return this.http.get<Employee[]>(this._baseUrl + 'api/employee/getallemployee');
+  }
 
   public registerEmployee(employee: Employee): Observable<Employee> {
     return this.http.post<Employee>(this._baseUrl + 'api/employee/registeremployee', JSON.stringify(employee), {headers: this.headers});

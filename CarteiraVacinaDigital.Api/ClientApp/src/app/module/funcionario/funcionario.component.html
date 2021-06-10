@@ -19,12 +19,12 @@
         </tr>
       </thead>
       <tbody>
-        <tr >
-          <th scope="row"></th>
-          <td ></td>
-          <td ></td>
-          <td ></td>
-          <td ></td>
+        <tr *ngFor="let e of employees" >
+          <th scope="row">{{e.id}}</th>
+          <td>{{e.name}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.cpf}}</td>
+          <td>{{e.city}}</td>
         </tr>
         <tr>
       </tbody>

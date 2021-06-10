@@ -1,5 +1,5 @@
-﻿using CarteiraVacinaDigital.Model_.Contracts;
-using CarteiraVacinaDigital.Model_.Entities;
+﻿using CarteiraVacinaDigital.Model.Contracts;
+using CarteiraVacinaDigital.Model.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -18,14 +18,27 @@ namespace CarteiraVacinaDigital.Api.Controllers
             _employeeRepository = employeeRepository;
         }
 
+        [HttpGet("GetAllEmployee")]
+        public ActionResult GetAllEmployee()
+        {
+            try
+            {
+                return Json(_employeeRepository.GetAll());
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
+        }
+
         [HttpPost("RegisterEmployee")]
         public ActionResult RegisterEmployee([FromBody] Employee employee)
         {
             try
             {
                 var employeeResult = _employeeRepository.GetByCpf(employee.Cpf);
-                if (employeeResult.Cpf == employee.Cpf)
-                    return BadRequest("CPF já cadastrado");
+                //if (employeeResult.Cpf == employee.Cpf)
+                //    return BadRequest("CPF já cadastrado");
 
                 _employeeRepository.Insert(employee);
                 return Ok();

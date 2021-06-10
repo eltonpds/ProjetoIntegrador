@@ -1,4 +1,4 @@
-using CarteiraVacinaDigital.Model_.Contracts;
+using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Repository.Context;
 using CarteiraVacinaDigital.Repository.Repository;
 using Microsoft.AspNetCore.Builder;
