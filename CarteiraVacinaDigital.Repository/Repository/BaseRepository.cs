@@ -1,6 +1,7 @@
 ﻿using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Repository.Context;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace CarteiraVacinaDigital.Repository.Repository
 {
@@ -12,18 +13,13 @@ namespace CarteiraVacinaDigital.Repository.Repository
             CarteiraVacinaDigitalContext = carteiraVacinaDigitalContext;
         }
 
-        public void Adicionar(TEntity entity)
+        public void Insert(TEntity entity)
         {
             CarteiraVacinaDigitalContext.Set<TEntity>().Add(entity);
             CarteiraVacinaDigitalContext.SaveChanges();
         }
 
-        public TEntity ObterPorId(int id)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public IEnumerable<TEntity> ObterTodos()
+        public TEntity GetById(int id)
         {
             throw new System.NotImplementedException();
         }
@@ -31,6 +27,11 @@ namespace CarteiraVacinaDigital.Repository.Repository
         public void Dispose()
         {
             CarteiraVacinaDigitalContext.Dispose();
+        }
+
+        public IEnumerable<TEntity> GetAll()
+        {
+            return CarteiraVacinaDigitalContext.Set<TEntity>().ToList();
         }
     }
 }

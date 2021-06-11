@@ -7,9 +7,9 @@ using System.Text;
 
 namespace CarteiraVacinaDigital.Repository.Repository
 {
-    public class VaccineRepository : BaseRepository<Vaccine>, IVaccineRepository
+    public class PacientRepository : BaseRepository<Pacient>, IPacientRepository
     {
-        public VaccineRepository(CarteiraVacinaDigitalContext carteiraVacinaDigitalContext) : base(carteiraVacinaDigitalContext)
+        public PacientRepository(CarteiraVacinaDigitalContext carteiraVacinaDigitalContext) : base(carteiraVacinaDigitalContext)
         {
         }
     }

@@ -1,6 +1,6 @@
 ﻿using CarteiraVacinaDigital.Model.Entities.Enums;
 
-namespace CarteiraVacinaDigital.Model_.Entities
+namespace CarteiraVacinaDigital.Model.Entities
 {
     public class Employee
     {
