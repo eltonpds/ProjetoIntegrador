@@ -1,0 +1,16 @@
+<h1>Registrar Vacina</h1>
+
+<div class="col-sm-12">
+  <div class="col-sm-6">
+    <input type="text" name="pacient" list="pacientName"/>
+    <datalist id="pacientName" [(ngModel)]="pacients">
+        <option *ngFor="let p of pacients" value={{p.name}}>{{p.name}}}}</option>
+    </datalist>
+  </div>
+  <div class="col-sm-6">
+    <input type="text" name="vaccine" list="vaccineName" />
+    <datalist id="vaccineName" [(ngModel)]="vaccines">
+        <option *ngFor="let v of vaccines" value={{p.vaccineName}}>{{v.vaccineName}}</option>
+    </datalist>
+  </div>
+</div>

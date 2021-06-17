@@ -2,17 +2,55 @@
   <form class="needs-validation" novalidate>
     <div class="form-row">
       <div class="col-md-6 mb-3">
-        <label>Paciente</label>
-        <select class="custom-select">
-          <option selected>Selecione o Paciente</option>
-          <!-- <option [(ngModel)]="pacienteSelecionado" *ngFor="let p of pacientes">{{p.name}}</option> -->
-        </select>
+        <label for="inputVaccine">Nome</label>
+        <input type="text"
+          name="inputVaccine"
+          class="form-control"
+          id="inputvaccine"
+          [(ngModel)]="vaccine.vaccineName"
+          #inputVaccine="ngModel"
+          required />
       </div>
       <div class="col-md-6 mb-3">
-        <label for="validationCustom02">Vacina</label>
-        <select class="custom-select">
-          <option selected>Selecione a vacina</option>
-        </select>
+        <label for="inputFactoryName">Fábrica</label>
+        <input type="text"
+          name="inputFactoryName"
+          class="form-control"
+          id="inputFactoryName"
+          [(ngModel)]="vaccine.factoryName"
+          #inputFactoryName="ngModel"
+          required />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="inputManufacturingDate">Data de Fabricação</label>
+        <input type="date"
+          name="inputManufacturingDate"
+          class="form-control"
+          id="inputManufacturingDate"
+          [(ngModel)]="vaccine.manufacturingDate"
+          #inputManufacturingDate="ngModel"
+          required />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputValidate">Data de Validade</label>
+        <input type="date"
+          name="inputValidate"
+          class="form-control"
+          id="inputValidate"
+          [(ngModel)]="vaccine.validate"
+          #inputValidate="ngModel"
+          required />
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputLote">Lote</label>
+        <input type="text"
+          name="inputLote"
+          class="form-control"
+          id="inputLote"
+          [(ngModel)]="vaccine.lote"
+          #inputLote="ngModel"
+          required />
       </div>
     </div>
   

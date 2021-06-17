@@ -2,6 +2,8 @@ import { PacienteComponent } from './../paciente/paciente.component';
 import { Pacient } from './../../core/model/pacient';
 import { Component, OnInit } from '@angular/core';
 import { Vaccine } from 'src/app/core/model/vaccine';
+import { VaccineService } from './vaccine.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,25 +13,34 @@ import { Vaccine } from 'src/app/core/model/vaccine';
 })
 export class VaccineComponent implements OnInit {
 
+  vaccine: Vaccine;
   vaccines: Vaccine[];
-  pacientes: Pacient[];
-  pacienteSelecionado: Pacient[];
-  vacinaSelecionada: Vaccine[];
 
-  constructor(paciente: PacienteComponent) {
-    this.vaccines = [
-      {name: 'H1N1'},
-      {name: 'Varíola'},
-      {name: 'Sarampo'},
-      {name: 'Febre Amarela'},
-      {name: 'Tetâno'},
-    ];
-   }
+  constructor(private _vaccineService: VaccineService, private _router: Router) {
+    this._vaccineService.getVaccine()
+      .subscribe(
+        result => {
+          this.vaccines = result
+        },
+        e => {
+          console.log(e);
+        }
+      );
+  }
 
    ngOnInit() {
+     this.vaccine = new Vaccine();
    }
 
    registrarVacina() {
-     
+    this._vaccineService.registerVaccine(this.vaccine)
+    .subscribe(
+      result => {
+        this.vaccine = result
+      },
+      e => {
+        console.log(e);
+      }
+    );
    }
 }

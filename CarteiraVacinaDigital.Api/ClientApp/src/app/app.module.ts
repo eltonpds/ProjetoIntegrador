@@ -14,6 +14,7 @@ import { FooterComponent } from './layout/footer/footer.component';
 import { AsideComponent } from './layout/aside/aside.component';
 import { VacinaModule } from './module/vacina/vacina.module';
 import { LoginComponent } from './core/login/login.component';
+import { RegisterVaccineComponent } from './module/register-vaccine/register-vaccine.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { LoginComponent } from './core/login/login.component';
     FooterComponent,
     HomeComponent,
     AsideComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterVaccineComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
