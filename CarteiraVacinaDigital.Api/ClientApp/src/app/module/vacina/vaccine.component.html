@@ -1,20 +1,21 @@
-<form class="needs-validation" novalidate>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
-      <label>Paciente</label>
-      <select class="custom-select">
-        <option selected>Selecione o Paciente</option>
-        <!-- <option [(ngModel)]="pacienteSelecionado" *ngFor="let p of pacientes">{{p.name}}</option> -->
-      </select>
+<div>
+  <form class="needs-validation" novalidate>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label>Paciente</label>
+        <select class="custom-select">
+          <option selected>Selecione o Paciente</option>
+          <!-- <option [(ngModel)]="pacienteSelecionado" *ngFor="let p of pacientes">{{p.name}}</option> -->
+        </select>
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="validationCustom02">Vacina</label>
+        <select class="custom-select">
+          <option selected>Selecione a vacina</option>
+        </select>
+      </div>
     </div>
-    <div class="col-md-6 mb-3">
-      <label for="validationCustom02">Vacina</label>
-      <select class="custom-select">
-        <option selected>Selecione a vacina</option>
-        <option [(ngModel)]="vacinaSelecionada" *ngFor="let v of vaccines">{{v.name}}</option>
-      </select>
-    </div>
-  </div>
-
-  <button class="btn btn-primary" type="submit" (click)="registrarVacina()">Registrar Vacina</button>
-</form>
+  
+    <button class="btn btn-primary" type="submit" (click)="registrarVacina()">Registrar Vacina</button>
+  </form>
+</div>

@@ -3,3 +3,7 @@
 ################################################################################
 
 /.vs/CarteiraVacinaDigital
+/CarteiraVacinaDigital.Model/obj
+/CarteiraVacinaDigital.Repository/bin/Debug/netstandard2.0
+/CarteiraVacinaDigital.Repository/obj
+/CarteiraVacinaDigital.Model/bin/Debug/netstandard2.0

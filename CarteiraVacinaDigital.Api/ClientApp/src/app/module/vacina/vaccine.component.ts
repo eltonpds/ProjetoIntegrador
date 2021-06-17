@@ -24,10 +24,12 @@ export class VaccineComponent implements OnInit {
       {name: 'Febre Amarela'},
       {name: 'Tetâno'},
     ];
-
-    this.pacientes = paciente.carregarPacientes();
    }
 
    ngOnInit() {
+   }
+
+   registrarVacina() {
+     
    }
 }

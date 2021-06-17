@@ -36,6 +36,7 @@ namespace CarteiraVacinaDigital.Api
                 (connectionString, m => m.MigrationsAssembly("CarteiraVacinaDigital.Repository")));
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IPacientRepository, PacientRepository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

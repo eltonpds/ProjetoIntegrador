@@ -33,6 +33,15 @@ namespace CarteiraVacinaDigital.Repository.Configuration
 
             builder
                 .Property(p => p.CartaoSus);
+
+            builder
+                .Property(p => p.Adress);
+
+            builder
+                .Property(p => p.City);
+
+            builder
+                .Property(p => p.State);
         }
     }
 }

@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { PacienteComponent } from './module/paciente/paciente.component';
 import { FuncionarioComponent } from './module/funcionario/funcionario.component';
 import { VaccineComponent } from './module/vacina/vaccine.component';
+import { PacientFormComponent } from './module/paciente/pacient-form/pacient-form.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
       { path: 'funcionario', component: FuncionarioComponent },
       { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent },
       { path: 'paciente', component: PacienteComponent },
-      { path: 'registrarvacina', component: VaccineComponent }
+      { path: 'cadastro-paciente', component: PacientFormComponent },
+      { path: 'vacinas', component: VaccineComponent }
     ]}
 ]
 

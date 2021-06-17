@@ -1,0 +1,121 @@
+<form>
+  <div class="form-row">
+    <div class="form-group col-md-12">
+      <label for="inputName">Nome</label>
+      <input type="text"
+              name="inputName"
+              class="form-control"
+              id="inputName"
+              [(ngModel)]="pacient.name"
+              #name="ngModel"
+              [ngClass]=""
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputEmail">Email</label>
+      <input type="email"
+      name="inputEmail"
+      class="form-control"
+      id="inputEmail"
+      [(ngModel)]="pacient.email"
+      #inputEmail="ngModel"
+      required />
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputPassword">Senha</label>
+      <input type="password"
+              name="inputPassword"
+              class="form-control"
+              id="inputPassword"
+              [(ngModel)]="pacient.password"
+              #password="ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-3">
+      <label for="inputCPF">CPF</label>
+      <input type="text"
+              name="inputCPF"
+              class="form-control"
+              id="inputCPF"
+              [(ngModel)]="pacient.cpf"
+              #cpf="ngModel"
+              required />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputMotherName">Nome da Mãe</label>
+      <input type="text"
+              name="inputMotherName"
+              class="form-control"
+              id="inputMotherName"
+              [(ngModel)]="pacient.motherName"
+              #motherName = "ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputFatherName">Nome do Pai</label> 
+      <input type="text"
+              name="inputFatherName"
+              class="form-control"
+              id="inputFatherName"
+              [(ngModel)]="pacient.fatherName"
+              #FatherName = "ngModel"
+              required />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputAddress">Endereço</label>
+      <input type="text"
+              name="inputAddress"
+              class="form-control"
+              id="inputAddress"
+              [(ngModel)]="pacient.adress"
+              #adress = "ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputCartaoSus">Cartão SUS</label>
+      <input type="text"
+              name="inputCartaoSus"
+              class="form-control"
+              id="inputCartaoSus"
+              [(ngModel)]="pacient.cartaoSus"
+              #CartaoSus = "ngModel"
+              required />
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-6">
+      <label for="inputCity">Cidade</label>
+      <input type="text"
+              name="inputCity"
+              class="form-control"
+              id="inputCity"
+              [(ngModel)]="pacient.city"
+              #city="ngModel"
+              required />
+    </div>
+    <div class="form-group col-md-6">
+      <label for="inputState">Estado</label>
+      <select id="inputState" class="form-control" name="state" [(ngModel)]="states.id">
+        <option *ngFor="let state of states" [value]="state.id">{{state.name}}</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="form-group">
+      <label for="inputZip">CEP</label>
+      <input type="text"
+              class="form-control"
+              name="inputZip"
+              id="inputZip"
+              [(ngModel)]="pacient.cep"
+              #cep="ngModel"
+              required />
+    </div>
+  </div>
+  <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
+  <button type="submit" class="btn btn-primary float-right" (click)="register()">Cadastrar</button>
+</form>

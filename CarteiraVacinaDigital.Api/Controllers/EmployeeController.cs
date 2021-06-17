@@ -2,9 +2,6 @@
 using CarteiraVacinaDigital.Model.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarteiraVacinaDigital.Api.Controllers
 {
@@ -37,8 +34,8 @@ namespace CarteiraVacinaDigital.Api.Controllers
             try
             {
                 var employeeResult = _employeeRepository.GetByCpf(employee.Cpf);
-                //if (employeeResult.Cpf == employee.Cpf)
-                //    return BadRequest("CPF já cadastrado");
+                if (employeeResult.Cpf == employee.Cpf)
+                    return BadRequest("CPF já cadastrado");
 
                 _employeeRepository.Insert(employee);
                 return Ok();

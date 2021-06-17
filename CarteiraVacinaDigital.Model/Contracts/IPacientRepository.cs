@@ -7,5 +7,6 @@ namespace CarteiraVacinaDigital.Model.Contracts
 {
     public interface IPacientRepository : IBaseRepository<Pacient>
     {
+        Pacient GetByCpf(string cpf);
     }
 }

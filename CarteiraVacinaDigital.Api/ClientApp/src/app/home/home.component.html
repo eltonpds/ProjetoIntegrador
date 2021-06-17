@@ -1,15 +1,25 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <nav class="nav flex-column">
-        <a class="nav-link active" [routerLink]="['/registrarvacina']">Registrar Vacina
-        </a>
-        <a class="nav-link" routerLink="/paciente">Paciente</a>
-        <a class="nav-link" routerLink="/funcionario">Funcionário</a>
-      </nav>
+      <ul class="nav flex-column">
+        <li class="nav-item mb-3">
+          <a class="nav-link btn btn-primary" href="#registrarvacina" [routerLink]="['/registrarvacina']"><i class="fas fa-syringe"></i> Registrar Vacina</a>      
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link btn btn-primary" href="#pacientes" [routerLink]="['/paciente']"> Pacientes</a>
+        </li>
+        <li class="nav-item mb-3">          
+          <a class="nav-link btn btn-primary" href="#funcionarios" [routerLink]="['/funcionario']"><i class="fas fa-user-nurse"></i> Funcionários</a>
+        </li>
+        <li class="nav-item mb-3">
+          <a class="nav-link btn btn-primary" href="#vacinas" [routerLink]="['/vacinas']"><i class="fas fa-syringe"></i> Vacinas</a>      
+        </li>
+      </ul>
     </div>
     <div class="col-md-9">
-        <router-outlet></router-outlet>
+        <div class="tab-content" id="nav-tabContent">
+          <router-outlet></router-outlet>
+        </div>
     </div>
   </div>
 </div>
