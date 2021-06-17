@@ -8,7 +8,9 @@ import { Employee } from 'src/app/core/model/employee';
   providedIn: 'root'
 })
 export class FuncionarioService {
+
   private _baseUrl: string;
+  public employee: Employee[];
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl:string) {
     this._baseUrl = baseUrl;
@@ -18,7 +20,15 @@ export class FuncionarioService {
      return new HttpHeaders().set('content-type', 'application/json');
    }
 
-  public registerEmployee(employee: Employee): Observable<Employee> {
+   getEmployee():Observable<Employee[]> {     
+    console.log('Serviço funciona');
+    console.log(this._baseUrl + 'api/employee/getallemployee');
+    return this.http.get<Employee[]>(this._baseUrl + 'api/employee/getallemployee');
+  }
+
+  public registerEmployee(employee: Employee): Observable<Employee> {    
+    console.log('Serviço funciona');
+    console.log(this._baseUrl + 'api/employee/registeremployee');
     return this.http.post<Employee>(this._baseUrl + 'api/employee/registeremployee', JSON.stringify(employee), {headers: this.headers});
   }
 }

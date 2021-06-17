@@ -12,8 +12,17 @@ import { Router } from '@angular/router';
   styleUrls: ['./funcionario.component.css']
 })
 export class FuncionarioComponent implements OnInit {
+
   employee: Employee;
+  employees: Employee[];
+
   constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
+    this._funcionarioService.getEmployee()
+    .subscribe(
+      employees => {
+        this.employees = employees;
+      }
+    );
   }
 
   ngOnInit(): void {

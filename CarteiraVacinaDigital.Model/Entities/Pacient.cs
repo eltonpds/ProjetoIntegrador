@@ -1,20 +1,24 @@
 ﻿using CarteiraVacinaDigital.Model.Entities.Enums;
+using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
-    public class Employee
+    public class Pacient
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
         public string Password { get; set; }
         public string Cpf { get; set; }
-        public string Coren { get; set; }
+        public string CartaoSus { get; set; }
+        public string MotherName { get; set; }
+        public string FatherName { get; set; }
         public string Adress { get; set; }
         public string City { get; set; }
         public StateEnum State { get; set; }
         public string Cep { get; set; }
-        public OfficeEnum Perfil { get; set; }
-
+        public int ScheduleId { get; set; }
     }
 }

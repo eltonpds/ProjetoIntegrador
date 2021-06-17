@@ -1,31 +1,36 @@
-import { VaccineComponent } from './../vacina/vaccine.component';
-import { Pacient } from './../../core/model/pacient';
 import { Component, Injectable, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { Pacient } from './../../core/model/pacient';
+import { PacientService } from './pacient.service';
 
 @Component({
   selector: 'app-paciente',
   templateUrl: './paciente.component.html',
   styleUrls: ['./paciente.component.css']
 })
-@Injectable({
-  providedIn: 'root'
-})
 export class PacienteComponent implements OnInit {
 
-  pacientes: Pacient[];
-  constructor() {
-    this.pacientes = [
-      {id: 1, name: 'Gabriel'},
-      {id: 2, name: 'Kelly'},
-      {id: 3, name: 'Josy'},
-      {id: 4, name: 'Vitória'},
-      {id: 5, name: 'Jeová'},
-    ]
+  pacient: Pacient;
+  pacients: Pacient[];
+  
+  constructor(private _pacienteService: PacientService, private _router: Router) {
+    this._pacienteService.getPacient()
+      .subscribe(
+        result => {
+          this.pacients = result
+        },
+        e => {
+          console.log(e);
+        }
+      );
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.pacient = new Pacient();
   }
-  carregarPacientes() {
-    return this.pacientes;
+
+  telaCadastro() {
+    this._router.navigate(['/cadastro-paciente']);
   }
 }

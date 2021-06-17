@@ -1,10 +1,7 @@
-﻿using CarteiraVacinaDigital.Model_.Contracts;
-using CarteiraVacinaDigital.Model_.Entities;
+﻿using CarteiraVacinaDigital.Model.Contracts;
+using CarteiraVacinaDigital.Model.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace CarteiraVacinaDigital.Api.Controllers
 {
@@ -16,6 +13,19 @@ namespace CarteiraVacinaDigital.Api.Controllers
         public EmployeeController(IEmployeeRepository employeeRepository)
         {
             _employeeRepository = employeeRepository;
+        }
+
+        [HttpGet("GetAllEmployee")]
+        public ActionResult GetAllEmployee()
+        {
+            try
+            {
+                return Json(_employeeRepository.GetAll());
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex.ToString());
+            }
         }
 
         [HttpPost("RegisterEmployee")]

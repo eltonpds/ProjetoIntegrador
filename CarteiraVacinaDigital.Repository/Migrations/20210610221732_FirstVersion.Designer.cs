@@ -3,14 +3,16 @@ using System;
 using CarteiraVacinaDigital.Repository.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarteiraVacinaDigital.Repository.Migrations
 {
     [DbContext(typeof(CarteiraVacinaDigitalContext))]
-    partial class CarteiraVacinaDigitalContextModelSnapshot : ModelSnapshot
+    [Migration("20210610221732_FirstVersion")]
+    partial class FirstVersion
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -57,13 +59,7 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Adress");
-
                     b.Property<string>("CartaoSus");
-
-                    b.Property<string>("Cep");
-
-                    b.Property<string>("City");
 
                     b.Property<string>("Cpf");
 
@@ -78,8 +74,6 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.Property<string>("Password");
 
                     b.Property<int>("ScheduleId");
-
-                    b.Property<int>("State");
 
                     b.HasKey("Id");
 

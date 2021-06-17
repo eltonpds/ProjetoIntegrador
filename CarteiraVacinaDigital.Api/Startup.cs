@@ -1,4 +1,4 @@
-using CarteiraVacinaDigital.Model_.Contracts;
+using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Repository.Context;
 using CarteiraVacinaDigital.Repository.Repository;
 using Microsoft.AspNetCore.Builder;
@@ -36,6 +36,8 @@ namespace CarteiraVacinaDigital.Api
                 (connectionString, m => m.MigrationsAssembly("CarteiraVacinaDigital.Repository")));
 
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IPacientRepository, PacientRepository>();
+            services.AddScoped<IVaccineRepository, VaccineRepository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {

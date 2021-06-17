@@ -1,4 +1,4 @@
-﻿using CarteiraVacinaDigital.Model_.Entities;
+﻿using CarteiraVacinaDigital.Model.Entities;
 
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
