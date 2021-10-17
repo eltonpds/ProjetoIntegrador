@@ -11,6 +11,6 @@ export class Pacient {
   fatherNamme: string;
   adress: string;
   city: string;
-  state: number;
+  state: State;
   cep: string;
 }
