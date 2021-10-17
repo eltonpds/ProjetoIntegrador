@@ -3,14 +3,16 @@ using System;
 using CarteiraVacinaDigital.Repository.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarteiraVacinaDigital.Repository.Migrations
 {
     [DbContext(typeof(CarteiraVacinaDigitalContext))]
-    partial class CarteiraVacinaDigitalContextModelSnapshot : ModelSnapshot
+    [Migration("20211017193518_Atualizando entidades")]
+    partial class Atualizandoentidades
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -12,19 +12,24 @@
       Cadastrar Paciente
     </button>
 </div>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Nome</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let p of pacients">
-      <th scope="row">{{p.id}}</th>
-      <td>{{p.name}}</td>
-    </tr>
-  </tbody>
-</table>
+<div class="row">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Email</th>
+        <th scope="col">Nome da Mãe</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of pacients">
+        <td>{{p.name}}</td>
+        <td>{{p.email}}</td>
+        <td>{{p.motherName}}</td>      
+        <td><button class="btn btn-success btn-sm"><i class="fas fa-edit"></i></button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
 
 </div>

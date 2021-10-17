@@ -11,11 +11,8 @@ import { PacientService } from '../pacient.service';
 })
 export class PacientFormComponent implements OnInit {
 
-  pacient: Pacient;
-  states = [
-    {id: 1, name: 'AC'},
-    {name:'AL'}, {name:'AM'},{name:'AP'},{name:'BA'}, {name:'CE'},{name:'DF'},{name:'ES'},{name:'GO'},{name:'MA'},{name:'MG'},{name:'MS'},{name:'MT'},{name:'PA'},{name:'PB'},{name:'PE'},{name:'PI'},{name:'PR'},{name:'RJ'},{name:'RN'},{name:'RO'},{name:'RR'},{name:'RS'},{name:'SC'},{name:'SE'},{name:'SP'},{name:'TO'}
-  ];
+  pacient: Pacient;  
+  states = Object.values(State);
 
   constructor(private _pacientService: PacientService, private _router: Router) {
    }
@@ -28,13 +25,12 @@ export class PacientFormComponent implements OnInit {
     this._router.navigate(['/paciente']);
   }
 
-  public register() { 
-    console.log('Componente funciona');
+  public register(state) { 
+    this.pacient.state = state;
     this._pacientService.registerPacient(this.pacient)
     .subscribe(
       pacientJson => {
         this.pacient = pacientJson,
-        console.log(this.pacient)
         this.voltar();
       },
       e => {

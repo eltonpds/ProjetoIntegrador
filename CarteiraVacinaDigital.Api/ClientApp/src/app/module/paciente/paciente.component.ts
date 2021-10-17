@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { State } from 'src/app/core/model/enum/stateEnum';
 
 import { Pacient } from './../../core/model/pacient';
 import { PacientService } from './pacient.service';
@@ -15,6 +16,7 @@ export class PacienteComponent implements OnInit {
   pacients: Pacient[];
   
   constructor(private _pacienteService: PacientService, private _router: Router) {
+    
     this._pacienteService.getPacient()
       .subscribe(
         result => {

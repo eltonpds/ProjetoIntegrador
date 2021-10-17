@@ -15,6 +15,8 @@ namespace CarteiraVacinaDigital.Model.Entities
         public StateEnum State { get; set; }
         public string Cep { get; set; }
         public OfficeEnum Perfil { get; set; }
+        public virtual Log Logs { get; set; }
+        public virtual int LogId { get; set; }
 
     }
 }

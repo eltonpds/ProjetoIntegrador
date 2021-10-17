@@ -79,8 +79,8 @@
     </div>
     <div class="form-group col-md-6">
       <label for="inputState">Estado</label>
-      <select id="inputState" class="form-control">
-        <option selected>UF</option>
+      <select id="inputState" class="form-control" name="state" [(ngModel)]="state">
+        <option *ngFor="let state of states" [value]="state">{{state}}</option>
         <option></option>
       </select>
     </div>
@@ -98,12 +98,11 @@
     </div>
     <div class="form-group col-md-6">
       <label for="inputZip">Cargo</label>
-      <select id="inputOffice" class="form-control">
-        <option selected>Selecione o cargo</option>
-        <option *ngFor="let item of office"></option>
+      <select id="inputOffice" class="form-control" name="office" [(ngModel)]="office">
+        <option *ngFor="let office of offices" [value]="office">{{office}}</option>
       </select>
     </div>
   </div>
   <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
-  <button type="submit" class="btn btn-primary float-right" (click)="register()">Cadastrar</button>
+  <button type="submit" class="btn btn-primary float-right" (click)="register(state, office)">Cadastrar</button>
 </form>

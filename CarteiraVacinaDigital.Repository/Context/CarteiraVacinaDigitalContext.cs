@@ -9,6 +9,10 @@ namespace CarteiraVacinaDigital.Repository.Context
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Pacient> Pacients { get; set; }
         public DbSet<Vaccine> Vaccines { get; set; }
+        public DbSet<Responsible> Responsibles { get; set; }
+        public DbSet<HealthPost> HealthPosts { get; set; }
+        public DbSet<VaccineHealthPost> VaccineHealthPosts { get; set; }
+        public DbSet<Log> Logs { get; set; }
 
         public CarteiraVacinaDigitalContext(DbContextOptions options) : base(options)
         {
@@ -20,6 +24,10 @@ namespace CarteiraVacinaDigital.Repository.Context
             modelBuilder.ApplyConfiguration(new EmployeeConfiguration());
             modelBuilder.ApplyConfiguration(new PacientConfiguration());
             modelBuilder.ApplyConfiguration(new VaccineConfiguration());
+            modelBuilder.ApplyConfiguration(new ResponsibleConfiguration());
+            modelBuilder.ApplyConfiguration(new HealthPostConfiguration());
+            modelBuilder.ApplyConfiguration(new LogConfiguration());
+            modelBuilder.ApplyConfiguration(new VaccineHealthPostConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

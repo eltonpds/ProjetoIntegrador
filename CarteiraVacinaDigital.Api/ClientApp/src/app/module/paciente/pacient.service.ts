@@ -24,7 +24,6 @@ export class PacientService {
   }
   
   public registerPacient(pacient: Pacient): Observable<Pacient> {
-    console.log(pacient.state);
     return this.http.post<Pacient>(this._baseUrl + 'api/pacient/registerpacient', JSON.stringify(pacient), {headers: this.headers});
   }
 }
