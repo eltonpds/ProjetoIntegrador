@@ -1,8 +1,4 @@
 ﻿using CarteiraVacinaDigital.Model.Entities.Enums;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
@@ -21,6 +17,5 @@ namespace CarteiraVacinaDigital.Model.Entities
         public StateEnum State { get; set; }
         public string Cep { get; set; }
         public virtual int? LogId { get; set; }
-
     }
 }
