@@ -1,5 +1,6 @@
 ﻿using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Model.Entities;
+using CarteiraVacinaDigital.Model.Entities.Enums;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -16,7 +17,7 @@ namespace CarteiraVacinaDigital.Api.Controllers
         }
 
         [HttpGet]
-        public ActionResult GetAllEmployee()
+        public ActionResult Pacient()
         {
             try
             {
@@ -33,7 +34,7 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
-                var pacientResult = _pacientRepository.GetByCpf(pacient.Cpf);
+                //var pacientResult = _pacientRepository.GetByCpf(pacient.Cpf);
 
                 _pacientRepository.Insert(pacient);
                 return Ok();

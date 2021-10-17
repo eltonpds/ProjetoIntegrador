@@ -14,8 +14,9 @@ import { Office } from './../../../core/model/enum/office';
 export class CadastroFuncionarioComponent implements OnInit {
 
   employee: Employee;
-  office: Office;
-  state: State;
+  offices = Object.values(Office);
+  states = Object.values(State);
+
   constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
    }
 
@@ -27,12 +28,13 @@ export class CadastroFuncionarioComponent implements OnInit {
     this._router.navigate(['/funcionario']);
   }
   
-  public register() {
+  public register(state, office) {
+    this.employee.state = state;
+    this.employee.office = office;
     this._funcionarioService.registerEmployee(this.employee)
     .subscribe(
       employeeJson => {
         this.employee = employeeJson,
-        console.log(this.employee)
         this.voltar();
       },
       e => {

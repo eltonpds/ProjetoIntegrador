@@ -34,8 +34,12 @@ namespace CarteiraVacinaDigital.Api.Controllers
             try
             {
                 var employeeResult = _employeeRepository.GetByCpf(employee.Cpf);
-                if (employeeResult.Cpf == employee.Cpf)
-                    return BadRequest("CPF já cadastrado");
+
+                if (employeeResult != null)
+                {
+                    if (employeeResult.Cpf == employee.Cpf) 
+                        return BadRequest("CPF já cadastrado");
+                }
 
                 _employeeRepository.Insert(employee);
                 return Ok();

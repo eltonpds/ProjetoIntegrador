@@ -27,8 +27,6 @@ export class FuncionarioService {
   }
 
   public registerEmployee(employee: Employee): Observable<Employee> {    
-    console.log('Serviço funciona');
-    console.log(this._baseUrl + 'api/employee/registeremployee');
     return this.http.post<Employee>(this._baseUrl + 'api/employee/registeremployee', JSON.stringify(employee), {headers: this.headers});
   }
 }

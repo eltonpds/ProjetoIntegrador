@@ -6,25 +6,25 @@
     <button type="button" class="btn btn-primary" (click)="telaCadastro()">
       Cadastrar funcionário
     </button>
-    </div>
+  </div>
     <div class="row">
     <table class="table table-bordered">
       <thead>
         <tr>
-          <th scope="col">Id</th>
           <th scope="col">Nome</th>
           <th scope="col">Email</th>
           <th scope="col">Cpf</th>
           <th scope="col">Cargo</th>
+          <th></th>
         </tr>
       </thead>
       <tbody>
         <tr *ngFor="let e of employees" >
-          <th scope="row">{{e.id}}</th>
           <td>{{e.name}}</td>
           <td>{{e.email}}</td>
           <td>{{e.cpf}}</td>
           <td>{{e.city}}</td>
+          <td><button class="btn btn-success btn-sm"><i class="fas fa-edit"></i></button></td>
         </tr>
         <tr>
       </tbody>
