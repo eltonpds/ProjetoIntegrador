@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
@@ -10,6 +8,8 @@ namespace CarteiraVacinaDigital.Model.Entities
         public string HealthUnit { get; set; }
         public string SanitaryDistrict { get; set; }
         public string Address { get; set; }
-        public ICollection<Vaccine> Vaccines { get; set; }
+        public virtual Log Logs { get; set; }
+        public virtual int LogsID { get; set; }
+        public virtual ICollection<VaccineHealthPost> VaccineHealthPosts { get; set; }
     }
 }

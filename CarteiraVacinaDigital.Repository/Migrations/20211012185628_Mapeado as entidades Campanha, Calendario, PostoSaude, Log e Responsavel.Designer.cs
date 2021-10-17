@@ -3,14 +3,16 @@ using System;
 using CarteiraVacinaDigital.Repository.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CarteiraVacinaDigital.Repository.Migrations
 {
     [DbContext(typeof(CarteiraVacinaDigitalContext))]
-    partial class CarteiraVacinaDigitalContextModelSnapshot : ModelSnapshot
+    [Migration("20211012185628_Mapeado as entidades Campanha, Calendario, PostoSaude, Log e Responsavel")]
+    partial class MapeadoasentidadesCampanhaCalendarioPostoSaudeLogeResponsavel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -150,7 +152,7 @@ namespace CarteiraVacinaDigital.Repository.Migrations
 
                     b.Property<string>("FatherName");
 
-                    b.Property<int?>("LogId");
+                    b.Property<int>("LogId");
 
                     b.Property<string>("MotherName");
 
@@ -158,15 +160,11 @@ namespace CarteiraVacinaDigital.Repository.Migrations
 
                     b.Property<string>("Password");
 
-                    b.Property<int?>("ResponsibleId");
-
                     b.Property<int>("State");
 
                     b.HasKey("Id");
 
                     b.HasIndex("LogId");
-
-                    b.HasIndex("ResponsibleId");
 
                     b.ToTable("Pacients");
                 });
@@ -178,9 +176,13 @@ namespace CarteiraVacinaDigital.Repository.Migrations
 
                     b.Property<int>("ChildrenID");
 
+                    b.Property<int?>("PacientId");
+
                     b.Property<int>("ResponsibleID");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("PacientId");
 
                     b.ToTable("Responsibles");
                 });
@@ -252,13 +254,17 @@ namespace CarteiraVacinaDigital.Repository.Migrations
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Pacient", b =>
                 {
-                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Log")
+                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Log", "Logs")
                         .WithMany("Pacients")
-                        .HasForeignKey("LogId");
+                        .HasForeignKey("LogId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
 
-                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Responsible")
-                        .WithMany("Pacients")
-                        .HasForeignKey("ResponsibleId");
+            modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Responsible", b =>
+                {
+                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Pacient", "Pacient")
+                        .WithMany("Responsibles")
+                        .HasForeignKey("PacientId");
                 });
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Vaccine", b =>
