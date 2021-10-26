@@ -1,5 +1,8 @@
 {
+  //"ConnectionStrings": {
+  //  "CarteiraVacinaDigitalDB": "server=localhost; uid=root; pwd=123456; database=CarteiraVacinaDB"
+  //}
   "ConnectionStrings": {
-    "CarteiraVacinaDigitalDB": "server=localhost; uid=root; pwd=123456; database=CarteiraVacinaDB"
-  }     
+    "CarteiraVacinacaoDigital": "server=remotemysql.com; uid=dFxSimqoDp; pwd=d4HfTDcpDI; database=dFxSimqoDp"
+  }
 }

@@ -30,7 +30,7 @@ namespace CarteiraVacinaDigital.Api
                 .AddJsonOptions(options =>
                     options.SerializerSettings.ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Serialize);
 
-            var connectionString = Configuration.GetConnectionString("CarteiraVacinaDigitalDB");
+            var connectionString = Configuration.GetConnectionString("CarteiraVacinacaoDigital");
             services.AddDbContext<CarteiraVacinaDigitalContext>
                 (option => option.UseLazyLoadingProxies().UseMySql
                 (connectionString, m => m.MigrationsAssembly("CarteiraVacinaDigital.Repository")));
@@ -38,6 +38,8 @@ namespace CarteiraVacinaDigital.Api
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
             services.AddScoped<IPacientRepository, PacientRepository>();
             services.AddScoped<IVaccineRepository, VaccineRepository>();
+            services.AddScoped<ICalenderRepository, CalenderRepository>();
+            services.AddScoped<IEmployeeLogRepository, EmployeeLogRepository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
