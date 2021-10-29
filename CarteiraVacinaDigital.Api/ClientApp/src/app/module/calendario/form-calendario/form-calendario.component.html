@@ -1,0 +1,38 @@
+<h1>Registrar novo Calendário de Vacina</h1>
+
+<div>
+  <form class="needs-validation" novalidate>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <label for="inputCalendario">Informação</label>
+        <input type="text"
+               name="inputCalendario"
+               class="form-control"
+               id="inputCalendario"
+               [(ngModel)]="calender.information"
+               #inputCalendario="ngModel"
+               required />
+      </div>
+      <div class="col-md-6 mb-3">
+        <label for="inputAgeGroup">Faixa Etária</label>
+        <input type="text"
+               name="inputAgeGroup"
+               class="form-control"
+               id="inputAgeGroup"
+               [(ngModel)]="calender.ageGroup"
+               #inputAgeGroup="ngModel"
+               required />
+      </div>
+
+      <div class="col-md-4 mb-3">
+        <label for="inputVaccine">Vacina</label>
+        <select id="inputVaccine" class="form-control" name="vaccine" [(ngModel)]="calender.vaccineID">
+          <option *ngFor="let vaccine of vaccines" [value]="vaccine.id">{{vaccine.vaccineName}}</option>
+        </select>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
+    <button class="btn btn-primary float-right" type="submit" (click)="registerCalendario()">Cadastrar Calendário</button>
+  </form>
+</div>
