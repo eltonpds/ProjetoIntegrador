@@ -1,26 +1,28 @@
-﻿using CarteiraVacinaDigital.Model.Contracts;
+using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Model.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace CarteiraVacinaDigital.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class VaccineController : Controller
+    public class CalenderController : Controller
     {
-        private readonly IVaccineRepository _vaccinerepository;
+        private readonly ICalenderRepository _calenderRepository;
 
-        public VaccineController(IVaccineRepository vaccinerepository)
+        public CalenderController(ICalenderRepository calenderRepository)
         {
-            _vaccinerepository = vaccinerepository;
+            _calenderRepository = calenderRepository;
         }
 
         [HttpGet]
-        public ActionResult GetAllVaccine()
+        public ActionResult Calender()
         {
             try
             {
-                return Json(_vaccinerepository.GetAll());
+                return Json(_calenderRepository.GetAll());
             }
             catch (Exception ex)
             {
@@ -28,12 +30,12 @@ namespace CarteiraVacinaDigital.Api.Controllers
             }
         }
 
-        [HttpPost("RegisterVaccine")]
-        public ActionResult RegisterVaccine([FromBody] Vaccine vaccine)
+        [HttpPost("RegisterCalender")]
+        public ActionResult RegisterCalender([FromBody] Calender calender)
         {
             try
             {
-                _vaccinerepository.Insert(vaccine);
+                _calenderRepository.Insert(calender);
                 return Ok();
             }
             catch (Exception ex)
@@ -42,6 +44,4 @@ namespace CarteiraVacinaDigital.Api.Controllers
             }
         }
     }
-
-
 }
