@@ -2,6 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { State } from 'src/app/core/model/enum/stateEnum';
 import { Pacient } from 'src/app/core/model/pacient';
+import { VaccineService } from '../../vacina/vaccine.service';
 import { PacientService } from '../pacient.service';
 
 @Component({
