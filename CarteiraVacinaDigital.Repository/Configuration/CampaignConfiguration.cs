@@ -22,7 +22,7 @@ namespace CarteiraVacinaDigital.Repository.Configuration
                 .IsRequired();
 
             builder
-                .HasMany(c => c.Vaccine)
+                .HasOne(c => c.Vaccine)
                 .WithOne(v => v.Campaign);
         }
     }
