@@ -19,19 +19,6 @@ namespace CarteiraVacinaDigital.Security
             return chaveCripto;
         }
 
-        //public bool VerifyString(string newText, string oldText)
-        //{
-        //    if (string.IsNullOrEmpty(oldText))
-        //        throw new NullReferenceException("Campo vazio. Favor inserir texto a ser criptografado.");
-
-        //    var decryptedOldText = DecryptString(oldText);
-        //    var decryptNewText = DecryptString(newText);
-
-        //    bool isEqual = oldText.Equals(newText);
-
-        //    return isEqual;
-        //}
-
         public static string DecryptString(string valor)
         {
             string chaveCripto;

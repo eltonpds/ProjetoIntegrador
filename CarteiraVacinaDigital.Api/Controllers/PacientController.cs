@@ -1,10 +1,8 @@
 ﻿using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Model.Entities;
-using CarteiraVacinaDigital.Model.Entities.Enums;
 using CarteiraVacinaDigital.Security;
 using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Security.Cryptography;
 
 namespace CarteiraVacinaDigital.Api.Controllers
 {
@@ -12,7 +10,6 @@ namespace CarteiraVacinaDigital.Api.Controllers
     public class PacientController : Controller
     {
         private readonly IPacientRepository _pacientRepository;
-        private Encrypter _encrypter = new Encrypter(SHA512.Create());
 
         public PacientController(IPacientRepository pacientRepository)
         {
@@ -37,8 +34,8 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
-                pacient.Password = _encrypter.EncryptString(pacient.Password);
-                pacient.Cpf = _encrypter.EncryptString(pacient.Cpf);
+                pacient.Password = Encrypter.EncryptString(pacient.Password);
+                pacient.Cpf = Encrypter.EncryptString(pacient.Cpf);
 
                 _pacientRepository.Insert(pacient);
                 return Ok();
