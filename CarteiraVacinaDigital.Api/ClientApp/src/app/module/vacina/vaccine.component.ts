@@ -26,21 +26,14 @@ export class VaccineComponent implements OnInit {
           console.log(e);
         }
       );
+      this._router.navigate(['/vacinas']);
+  }
+
+  telaCadastro() {
+    this._router.navigate(['/registrar-vacina']);
   }
 
    ngOnInit() {
      this.vaccine = new Vaccine();
-   }
-
-   registrarVacina() {
-    this._vaccineService.registerVaccine(this.vaccine)
-    .subscribe(
-      result => {
-        this.vaccine = result
-      },
-      e => {
-        console.log(e);
-      }
-    );
    }
 }

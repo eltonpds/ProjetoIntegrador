@@ -1,59 +1,30 @@
-<div>
-  <form class="needs-validation" novalidate>
-    <div class="form-row">
-      <div class="col-md-6 mb-3">
-        <label for="inputVaccine">Nome</label>
-        <input type="text"
-          name="inputVaccine"
-          class="form-control"
-          id="inputvaccine"
-          [(ngModel)]="vaccine.vaccineName"
-          #inputVaccine="ngModel"
-          required />
-      </div>
-      <div class="col-md-6 mb-3">
-        <label for="inputFactoryName">Fábrica</label>
-        <input type="text"
-          name="inputFactoryName"
-          class="form-control"
-          id="inputFactoryName"
-          [(ngModel)]="vaccine.factoryName"
-          #inputFactoryName="ngModel"
-          required />
-      </div>
+<div class="container">
+  <h1>Vacinas</h1>
 
-      <div class="col-md-4 mb-3">
-        <label for="inputManufacturingDate">Data de Fabricação</label>
-        <input type="date"
-          name="inputManufacturingDate"
-          class="form-control"
-          id="inputManufacturingDate"
-          [(ngModel)]="vaccine.manufacturingDate"
-          #inputManufacturingDate="ngModel"
-          required />
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="inputValidate">Data de Validade</label>
-        <input type="date"
-          name="inputValidate"
-          class="form-control"
-          id="inputValidate"
-          [(ngModel)]="vaccine.validate"
-          #inputValidate="ngModel"
-          required />
-      </div>
-      <div class="col-md-4 mb-3">
-        <label for="inputLote">Lote</label>
-        <input type="text"
-          name="inputLote"
-          class="form-control"
-          id="inputLote"
-          [(ngModel)]="vaccine.lote"
-          #inputLote="ngModel"
-          required />
-      </div>
-    </div>
-  
-    <button class="btn btn-primary" type="submit" (click)="registrarVacina()">Registrar Vacina</button>
-  </form>
+  <div class="row mb-3">
+    <button type="button" class="btn btn-primary" (click)="telaCadastro()">
+      Cadastrar Vacina
+    </button>
+  </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="row">Código</th>
+        <th scope="col">Nome</th>
+        <th scope="col">Fábrica</th>
+        <th scope="col">Data de Fabricação</th>
+        <th scope="col">Data de Validate</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let v of vaccines">
+        <th scope="row">{{v.id}}</th>
+        <td>{{v.vaccineName}}</td>
+        <td>{{v.factoryName}}</td>
+        <td>{{v.manufacturingDate}}</td>
+        <td>{{v.validate}}</td>
+      </tr>
+    </tbody>
+  </table>
+
 </div>

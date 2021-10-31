@@ -22,15 +22,20 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Information");
+                    b.Property<string>("AgeGroup")
+                        .IsRequired();
+
+                    b.Property<string>("Information")
+                        .IsRequired();
 
                     b.Property<int>("VaccineId");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("VaccineId");
+                    b.HasIndex("VaccineId")
+                        .IsUnique();
 
-                    b.ToTable("Calender");
+                    b.ToTable("Calenders");
                 });
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Campaign", b =>
@@ -38,13 +43,18 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("CampaignName");
+                    b.Property<string>("CampaignName")
+                        .IsRequired();
 
-                    b.Property<string>("Information");
+                    b.Property<string>("Information")
+                        .IsRequired();
 
                     b.Property<int>("VaccineId");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("VaccineId")
+                        .IsUnique();
 
                     b.ToTable("Campaign");
                 });
@@ -69,15 +79,15 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.Property<string>("Email")
                         .IsRequired();
 
-                    b.Property<int>("LogId");
+                    b.Property<int?>("LogId");
 
                     b.Property<string>("Name")
                         .IsRequired();
 
+                    b.Property<int>("Office");
+
                     b.Property<string>("Password")
                         .IsRequired();
-
-                    b.Property<int>("Perfil");
 
                     b.Property<int>("State");
 
@@ -86,6 +96,27 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.HasIndex("LogId");
 
                     b.ToTable("Employees");
+                });
+
+            modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.EmployeeLog", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Action");
+
+                    b.Property<DateTime>("DateTime");
+
+                    b.Property<int>("EmployeeID");
+
+                    b.Property<string>("Information");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("EmployeeID")
+                        .IsUnique();
+
+                    b.ToTable("EmployeeLogs");
                 });
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.HealthPost", b =>
@@ -190,11 +221,11 @@ namespace CarteiraVacinaDigital.Repository.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("CampaignId");
+                    b.Property<int?>("CalenderId");
 
                     b.Property<string>("FactoryName");
 
-                    b.Property<int>("LogId");
+                    b.Property<int?>("LogsId");
 
                     b.Property<string>("Lote");
 
@@ -206,9 +237,9 @@ namespace CarteiraVacinaDigital.Repository.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CampaignId");
+                    b.HasIndex("CalenderId");
 
-                    b.HasIndex("LogId");
+                    b.HasIndex("LogsId");
 
                     b.ToTable("Vaccines");
                 });
@@ -229,16 +260,31 @@ namespace CarteiraVacinaDigital.Repository.Migrations
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Calender", b =>
                 {
                     b.HasOne("CarteiraVacinaDigital.Model.Entities.Vaccine", "Vaccine")
-                        .WithMany("Calenders")
-                        .HasForeignKey("VaccineId")
+                        .WithOne()
+                        .HasForeignKey("CarteiraVacinaDigital.Model.Entities.Calender", "VaccineId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Campaign", b =>
+                {
+                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Vaccine", "Vaccine")
+                        .WithOne("Campaign")
+                        .HasForeignKey("CarteiraVacinaDigital.Model.Entities.Campaign", "VaccineId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Employee", b =>
                 {
-                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Log", "Logs")
+                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Log")
                         .WithMany("Employees")
-                        .HasForeignKey("LogId")
+                        .HasForeignKey("LogId");
+                });
+
+            modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.EmployeeLog", b =>
+                {
+                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Employee", "Employee")
+                        .WithOne("EmployeeLog")
+                        .HasForeignKey("CarteiraVacinaDigital.Model.Entities.EmployeeLog", "EmployeeID")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
@@ -263,15 +309,13 @@ namespace CarteiraVacinaDigital.Repository.Migrations
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.Vaccine", b =>
                 {
-                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Campaign", "Campaign")
-                        .WithMany("Vaccine")
-                        .HasForeignKey("CampaignId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                    b.HasOne("CarteiraVacinaDigital.Model.Entities.Calender", "Calender")
+                        .WithMany()
+                        .HasForeignKey("CalenderId");
 
                     b.HasOne("CarteiraVacinaDigital.Model.Entities.Log", "Logs")
                         .WithMany("Vaccines")
-                        .HasForeignKey("LogId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("LogsId");
                 });
 
             modelBuilder.Entity("CarteiraVacinaDigital.Model.Entities.VaccineHealthPost", b =>

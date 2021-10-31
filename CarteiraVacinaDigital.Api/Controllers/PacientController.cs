@@ -1,6 +1,6 @@
 ﻿using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Model.Entities;
-using CarteiraVacinaDigital.Model.Entities.Enums;
+using CarteiraVacinaDigital.Security;
 using Microsoft.AspNetCore.Mvc;
 using System;
 
@@ -34,7 +34,8 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
-                //var pacientResult = _pacientRepository.GetByCpf(pacient.Cpf);
+                pacient.Password = Encrypter.EncryptString(pacient.Password);
+                pacient.Cpf = Encrypter.EncryptString(pacient.Cpf);
 
                 _pacientRepository.Insert(pacient);
                 return Ok();

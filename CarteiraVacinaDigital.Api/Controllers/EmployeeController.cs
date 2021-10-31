@@ -24,6 +24,8 @@ namespace CarteiraVacinaDigital.Api.Controllers
             {
                 var employees = _employeeRepository.GetAll();
 
+                //Security.Encrypter.DecryptManyEmployees(employees);
+
                 return Json(employees);
             }
             catch(Exception ex)

@@ -42,6 +42,9 @@ namespace CarteiraVacinaDigital.Repository.Configuration
 
             builder
                 .Property(f => f.Cep);
+
+            builder
+                .Property(f => f.Office);
         }
     }
 }

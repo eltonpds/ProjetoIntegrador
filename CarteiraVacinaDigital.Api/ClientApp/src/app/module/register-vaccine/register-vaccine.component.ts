@@ -21,13 +21,16 @@ export class RegisterVaccineComponent implements OnInit {
     this._baseUrl = baseUrl;
     this._vaccineService.getVaccine()
     .subscribe(
-      result => {
-        this.vaccines = result
-      },
-      resultPacient => {
-        this.pacients = resultPacient
+      resultVaccine => {
+        this.vaccines = resultVaccine;
       }
     );
+    this._pacienteService.getPacient()
+    .subscribe(
+      resultPacient => {
+        this.pacients = resultPacient;
+      }
+    )
   }
 
   ngOnInit() {
@@ -43,6 +46,20 @@ export class RegisterVaccineComponent implements OnInit {
 
   public getVaccine(): Observable<Vaccine[]> {
     return this.http.get<Vaccine[]>(this._baseUrl + 'api/Vaccine');
+  }
+
+  public changePacient(e): void {
+    let name = e.target.value;
+    let list = this.pacients.filter(x => x.name === name)[0];
+  }
+
+  public changeVaccine(e): void {
+    let name = e.target.value;
+    let list = this.vaccines.filter(x => x.vaccineName === name)[0];
+  }
+
+  public registrarVacina() {
+    console.log('funcionando');
   }
 
 }

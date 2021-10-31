@@ -17,25 +17,41 @@
 <div class="container-fluid">
   <div class="row">
     <div class="col-md-3">
-      <ul class="nav flex-column">
-        <!-- <li class="nav-item mb-3">
-          <a class="nav-link btn btn-primary" href="#registrarvacina" [routerLink]="['/registrarvacina']"><i class="fas fa-syringe"></i> Registrar Vacina</a>      
-        </li> -->
-        <li class="nav-item mb-3">
-          <a class="nav-link btn btn-primary" href="#pacientes" [routerLink]="['/paciente']"> Pacientes</a>
-        </li>
-        <li class="nav-item mb-3">          
-          <a class="nav-link btn btn-primary" href="#funcionarios" [routerLink]="['/funcionario']"><i class="fas fa-user-nurse"></i> Funcionários</a>
-        </li>
-        <li class="nav-item mb-3">
-          <a class="nav-link btn btn-primary" href="#vacinas" [routerLink]="['/vacinas']"><i class="fas fa-syringe"></i> Vacinas</a>      
-        </li>
-      </ul>
-    </div>
-    <div class="col-md-9">
-        <div class="tab-content" id="nav-tabContent">
-          <router-outlet></router-outlet>
+      <div class="card bg-dark text-white">
+        <img class="img-responsive" src="assets/images/enfermagem.jpg" alt="Foto Perfil" />
+        <div class="card-body">
+          <h5 class="card-title">Joseane Pereira</h5>
+          <p class="card-text">Técn. Enfermagem</p>
         </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <a class="nav-link  align-items-center" href="#registrarvacina" [routerLink]="['/registrarvacina']"><i class="fas fa-plus"></i><i class="fas fa-syringe"></i><b> Vacinar Paciente</b></a>
+          </li>
+          <li class="list-group-item">
+            <a class="nav-link align-self-center" href="#pacientes" [routerLink]="['/paciente']"><i class="fas fa-hospital-user"></i><b> Pacientes</b></a>
+          </li>
+          <li class="list-group-item">
+            <a class="nav-link align-self-center" href="#funcionarios" [routerLink]="['/funcionario']"><i class="fas fa-user-nurse"></i><b> Funcionários</b></a>
+          </li>
+          <li class="list-group-item">
+            <a class="nav-link align-self-center" href="#vacinas" [routerLink]="['/vacinas']"><i class="fas fa-syringe"></i><b> Vacinas</b></a>
+          </li>
+          <li class="list-group-item">
+            <a class="nav-link align-self-center" href="#calender" [routerLink]="['/calendario']"><i class="fas fa-calendar-day"></i><b> Calendário</b></a>
+          </li>
+          <li class="list-group-item">
+            <a class="nav-link disabled align-self-center" aria-disabled="true" href="#agendamentos" [routerLink]="['/agendamentos']"><i class="fas fa-calendar-check"></i><b> Agendamentos</b></a>
+          </li>
+          <li class="list-group-item">
+            <a class="nav-link disabled align-self-center" aria-disabled="true" href="#campaigns" [routerLink]="['/campaigns']"><i class="fas fa-calendar-day"></i><b> Campanhas de Vacinação</b></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-8 justify-content-left">
+      <div class="tab-content" id="nav-tabContent">
+        <router-outlet></router-outlet>
+      </div>
     </div>
   </div>
 </div>

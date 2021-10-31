@@ -1,0 +1,29 @@
+<div class="container">
+  <h1>Calendário</h1>
+
+  <div class="row mb-4">    
+    <button type="button" class="btn btn-primary" (click)="telaCadastro()">
+      Registrar novo Calendário de Vacina
+    </button>
+  </div>
+  <div class="row">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th scope="col">Informação</th>
+          <th scope="col">Vacina</th>
+          <th scope="col">Faixa etária</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of calendarios">
+          <td>{{c.information}}</td>
+          <td>{{c.vaccine.vaccineName}}</td>   
+          <td>{{c.ageGroup}}</td>   
+          <td><button class="btn btn-success btn-sm"><i class="fas fa-edit"></i></button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+

@@ -1,8 +1,4 @@
 ﻿using CarteiraVacinaDigital.Model.Entities.Enums;
-using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
