@@ -1,8 +1,15 @@
 export enum Office {
-  Adm = 'Administrador',
-  Tecn = 'Técnico',
-  Enf = 'Enfermeiro(a)',
-  Dr = 'Dr.',
-  Dra = 'Dra.',
-  Estagiio = 'Estagiário(a)'
+  Administrador = 'Administrador',
+  Tecnico = 'Técnico',
+  Enfermeiro = 'Enfermeiro',
+  Medico = 'Medico',
+  Estagiario = 'Estagiario'
 }
+
+export const OfficeLabelMapping: Record<Office, string> = {
+  [Office.Administrador]: "Administrador",
+  [Office.Tecnico]: "Técnico(a)",
+  [Office.Enfermeiro]: "Enfermeiro(a)",
+  [Office.Medico]: "Dr(a)",
+  [Office.Estagiario]: "Estagiário(a)"
+};
