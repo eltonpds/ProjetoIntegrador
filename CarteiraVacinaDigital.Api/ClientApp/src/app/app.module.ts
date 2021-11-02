@@ -10,7 +10,6 @@ import { FuncionarioModule } from './module/funcionario/funcionario.module';
 import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
-import { FooterComponent } from './layout/footer/footer.component';
 import { AsideComponent } from './layout/aside/aside.component';
 import { VacinaModule } from './module/vacina/vacina.module';
 import { LoginComponent } from './core/login/login.component';
@@ -20,7 +19,6 @@ import { RegisterVaccineComponent } from './module/register-vaccine/register-vac
   declarations: [
     AppComponent,
     HeaderComponent,
-    FooterComponent,
     HomeComponent,
     AsideComponent,
     LoginComponent,

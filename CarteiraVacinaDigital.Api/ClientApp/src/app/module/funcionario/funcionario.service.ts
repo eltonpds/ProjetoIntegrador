@@ -21,7 +21,6 @@ export class FuncionarioService {
    }
 
    getEmployee():Observable<Employee[]> {     
-    console.log(this._baseUrl + 'api/employee/getallemployee');
     return this.http.get<Employee[]>(this._baseUrl + 'api/employee/getallemployee');
   }
 

@@ -23,10 +23,6 @@ namespace CarteiraVacinaDigital.Repository.Configuration
                 .Property(c => c.VaccineId)
                 .IsRequired();
 
-            builder
-                .HasOne(c => c.Vaccine)
-                .WithOne();
-
         }
     }
 }

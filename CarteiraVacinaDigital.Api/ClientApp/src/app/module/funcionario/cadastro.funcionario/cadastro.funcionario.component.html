@@ -81,7 +81,6 @@
       <label for="inputState">Estado</label>
       <select id="inputState" class="form-control" name="state" [(ngModel)]="state">
         <option *ngFor="let state of states" [value]="state">{{state}}</option>
-        <option></option>
       </select>
     </div>
   </div>
@@ -99,7 +98,7 @@
     <div class="form-group col-md-6">
       <label for="inputZip">Cargo</label>
       <select id="inputOffice" class="form-control" name="office" [(ngModel)]="office">
-        <option *ngFor="let office of offices" [value]="office">{{office}}</option>
+        <option *ngFor="let office of offices" [value]="office">{{OfficeLabelMapping[office]}}</option>
       </select>
     </div>
   </div>

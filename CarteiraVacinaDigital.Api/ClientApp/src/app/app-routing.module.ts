@@ -9,6 +9,7 @@ import { FuncionarioComponent } from './module/funcionario/funcionario.component
 import { VaccineComponent } from './module/vacina/vaccine.component';
 import { PacientFormComponent } from './module/paciente/pacient-form/pacient-form.component';
 import { RegisterVaccineComponent } from './module/register-vaccine/register-vaccine.component';
+import { FormVaccineComponent } from './module/vacina/form-vaccine/form-vaccine.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
       { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent },
       { path: 'paciente', component: PacienteComponent },
       { path: 'cadastro-paciente', component: PacientFormComponent },
-      { path: 'vacinas', component: VaccineComponent }
+      { path: 'vacinas', component: VaccineComponent }, 
+      { path: 'registrar-vacina', component: FormVaccineComponent }
     ]}
 ]
 

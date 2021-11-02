@@ -4,7 +4,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { State } from 'src/app/core/model/enum/stateEnum';
 import { FuncionarioService } from '../funcionario.service';
 import { Employee } from '../../../core/model/employee';
-import { Office } from './../../../core/model/enum/office';
+import { Office, OfficeLabelMapping } from './../../../core/model/enum/office';
 
 @Component({
   selector: 'app-cadastro.funcionario',
@@ -14,7 +14,9 @@ import { Office } from './../../../core/model/enum/office';
 export class CadastroFuncionarioComponent implements OnInit {
 
   employee: Employee;
+
   offices = Object.values(Office);
+  OfficeLabelMapping = OfficeLabelMapping;
   states = Object.values(State);
 
   constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
