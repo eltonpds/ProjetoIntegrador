@@ -14,6 +14,7 @@ export class PacientFormComponent implements OnInit {
 
   pacient: Pacient;  
   states = Object.values(State);
+  activateSpinner: boolean;
 
   constructor(private _pacientService: PacientService, private _router: Router) {
    }
@@ -27,15 +28,17 @@ export class PacientFormComponent implements OnInit {
   }
 
   public register(state) { 
+    this.activateSpinner = true;
     this.pacient.state = state;
     this._pacientService.registerPacient(this.pacient)
     .subscribe(
       pacientJson => {
         this.pacient = pacientJson,
+        this.activateSpinner = false,
         this.voltar();
       },
       e => {
-        console.log(e)
+        this.activateSpinner = false;
       }
     );
   }

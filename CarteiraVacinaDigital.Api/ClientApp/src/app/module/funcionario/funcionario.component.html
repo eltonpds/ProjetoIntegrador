@@ -8,26 +8,29 @@
     </button>
   </div>
     <div class="row">
-    <table class="table table-bordered">
-      <thead>
-        <tr>
-          <th scope="col">Nome</th>
-          <th scope="col">Email</th>
-          <th scope="col">Cpf</th>
-          <th scope="col">Cargo</th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let e of employees" >
-          <td>{{e.name}}</td>
-          <td>{{e.email}}</td>
-          <td>{{e.cpf}}</td>
-          <td>{{e.city}}</td>
-        </tr>
-        <tr>
-      </tbody>
-    </table>
+      <div class="text-center" *ngIf="activateSpinner">
+        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="activateSpinner"></span>
+      </div>
+      <table class="table table-bordered" *ngIf="employees">
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">Email</th>
+            <th scope="col">Cpf</th>
+            <th scope="col">Cargo</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let e of employees" >
+            <td>{{e.name}}</td>
+            <td>{{e.email}}</td>
+            <td>{{e.cpf}}</td>
+            <td>{{e.city}}</td>
+          </tr>
+          <tr>
+        </tbody>
+      </table>
   </div>
 
 </div>

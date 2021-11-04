@@ -14,16 +14,19 @@ export class PacienteComponent implements OnInit {
 
   pacient: Pacient;
   pacients: Pacient[];
+
+  activateSpinner: boolean;
   
   constructor(private _pacienteService: PacientService, private _router: Router) {
-    
+    this.activateSpinner = true;
     this._pacienteService.getPacient()
       .subscribe(
         result => {
           this.pacients = result
+          this.activateSpinner = false;
         },
         e => {
-          console.log(e);
+          this.activateSpinner = false;
         }
       );
   }

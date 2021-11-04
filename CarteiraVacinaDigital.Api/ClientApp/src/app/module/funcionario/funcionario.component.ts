@@ -16,13 +16,21 @@ export class FuncionarioComponent implements OnInit {
   employee: Employee;
   employees: Employee[];
 
+  public activateSpinner: boolean;
+
   constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
+    this.activateSpinner = true;
+    
     this._funcionarioService.getEmployee()
     .subscribe(
       employees => {
         this.employees = employees;
+        this.activateSpinner = false;
+      }, error => {
+        this.activateSpinner = false;
       }
     );
+
   }
 
   ngOnInit(): void {

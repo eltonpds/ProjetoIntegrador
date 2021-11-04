@@ -117,5 +117,5 @@
     </div>
   </div>
   <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
-  <button type="submit" class="btn btn-primary float-right" (click)="register(state)">Cadastrar</button>
+  <button type="submit" class="btn btn-primary float-right" [disabled]="activateSpinner" (click)="register(state)"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Cadastrar</button>
 </form>

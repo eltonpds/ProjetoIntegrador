@@ -18,6 +18,8 @@ export class CadastroFuncionarioComponent implements OnInit {
   offices = Object.values(Office);
   OfficeLabelMapping = OfficeLabelMapping;
   states = Object.values(State);
+  public msg: string;
+  public activateSpinner: boolean;
 
   constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
    }
@@ -31,16 +33,19 @@ export class CadastroFuncionarioComponent implements OnInit {
   }
   
   public register(state, office) {
+    this.activateSpinner = true;
     this.employee.state = state;
     this.employee.office = office;
     this._funcionarioService.registerEmployee(this.employee)
     .subscribe(
       employeeJson => {
         this.employee = employeeJson,
+        this.activateSpinner = false,
         this.voltar();
       },
       e => {
-        console.log(e)
+        this.msg = e.error;
+        this.activateSpinner = false;
       }
     );
   }
