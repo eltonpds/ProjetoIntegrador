@@ -1,10 +1,50 @@
-<div class="text-center">
-  <form class="form-signin">
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    <button type="submit" class="btn btn-primary mt-2">Entrar</button>
-  </form>
+<div class="align-self-center">
+    <form class="form-signin">
+      <label for="inputEmail">Email</label>
+      
+          <input type="email" 
+              class="form-control" 
+              id="inputEmail" 
+              name="email"
+              [ngClass]="{
+                'is-invalid': email.invalid && (email.dirty || email.touched),
+                'is-valid': email.valid && (email.dirty || email.touched)
+                }"
+                [(ngModel)]="employee.email"
+                #email="ngModel"
+                required />
 
+        <div class="invalid-feedback mb-1" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email.errors.required">
+            Email é de preenchimento obrigatório
+          </div>
+          <div *ngIf="email.errors.email">
+            Email inválido
+        </div></div>
+
+      <label for="inputPassword">Senha</label>
+      <input type="password" 
+              id="inputPassword"
+              name="password"
+              class="form-control mb-2"
+              [ngClass]="{
+              'is-invalid':password.invalid && (password.dirty || password.touched),
+              'is-valid': password.valid && (password.dirty || password.touched)
+              }"
+              [(ngModel)]="employee.password"
+              #password="ngModel" required />
+
+      <div class="invalid-feedback mb-1" role="alert" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">
+          Senha deve ser preenchido
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary mt-2 float-right" [disabled]="ativar_spinner" (click)="entrar()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span> Entrar</button>
+  
+      <div class="alert alert-danger" *ngIf="msg">
+        {{msg}}
+      </div>
+    </form>
+    
 </div>

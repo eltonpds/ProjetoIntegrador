@@ -10,23 +10,26 @@ import { VaccineComponent } from './module/vacina/vaccine.component';
 import { PacientFormComponent } from './module/paciente/pacient-form/pacient-form.component';
 import { RegisterVaccineComponent } from './module/register-vaccine/register-vaccine.component';
 import { FormVaccineComponent } from './module/vacina/form-vaccine/form-vaccine.component';
+import { SaveRouts } from './core/autorization/save.routs';
+import { PageNotFoundComponent } from './module/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent,
-    children: [
-      { path: 'registrarvacina', component: RegisterVaccineComponent },
-      { path: 'funcionario', component: FuncionarioComponent },
-      { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent },
-      { path: 'paciente', component: PacienteComponent },
-      { path: 'cadastro-paciente', component: PacientFormComponent },
-      { path: 'vacinas', component: VaccineComponent }, 
-      { path: 'registrar-vacina', component: FormVaccineComponent }
-    ]}
+  children: [
+    { path: 'registrarvacina', component: RegisterVaccineComponent, canActivate: [ SaveRouts ] },
+    { path: 'funcionario', component: FuncionarioComponent },
+    { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent, canActivate: [ SaveRouts ] },
+    { path: 'paciente', component: PacienteComponent },
+    { path: 'cadastro-paciente', component: PacientFormComponent },
+    { path: 'vacinas', component: VaccineComponent }, 
+    { path: 'registrar-vacina', component: FormVaccineComponent }
+  ]},
+  { path: '**', component: PageNotFoundComponent},
 ]
 
 @NgModule({
-  declarations: [],
+  declarations: [PageNotFoundComponent],
   imports: [ RouterModule.forRoot(routes) ],
   exports: [ RouterModule ]
 })

@@ -26,7 +26,6 @@ export class FormVaccineComponent implements OnInit {
         this.voltar();
       },
       e => {
-        console.log(e);
       }
     );
    }
