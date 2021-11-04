@@ -1,9 +1,6 @@
 ﻿using CarteiraVacinaDigital.Model.Entities;
 using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
 
 namespace CarteiraVacinaDigital.Security
 {
@@ -33,11 +30,20 @@ namespace CarteiraVacinaDigital.Security
         {
             foreach (var item in employees)
             {
-                item.Password = DecryptString(item.Password);
                 item.Cpf = DecryptString(item.Cpf);
             }
 
             return employees;
+        }
+
+        public static IEnumerable<Pacient> DecryptManyEmployees(IEnumerable<Pacient> pacients)
+        {
+            foreach (var item in pacients)
+            {
+                item.Cpf = DecryptString(item.Cpf);
+            }
+
+            return pacients;
         }
 
     }
