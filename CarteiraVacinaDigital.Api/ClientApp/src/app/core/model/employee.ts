@@ -1,5 +1,6 @@
 import { State } from './enum/stateEnum';
 import { Office } from './enum/office';
+
 export class Employee {
   id: number;
   name: string;
@@ -12,4 +13,5 @@ export class Employee {
   cep:string;
   coren: string;
   office: Office;
+  officeName: string;
 }

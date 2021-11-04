@@ -18,5 +18,10 @@ namespace CarteiraVacinaDigital.Repository.Repository
         {
             return CarteiraVacinaDigitalContext.Employees.FirstOrDefault(e => e.Cpf == cpf);
         }
+
+        public Employee Login(string email, string password)
+        {
+            return CarteiraVacinaDigitalContext.Employees.FirstOrDefault(e => e.Email == email && e.Password == password);
+        }
     }
 }
