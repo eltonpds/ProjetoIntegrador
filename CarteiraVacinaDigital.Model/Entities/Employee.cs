@@ -1,4 +1,5 @@
 ﻿using CarteiraVacinaDigital.Model.Entities.Enums;
+using Newtonsoft.Json;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
@@ -15,6 +16,5 @@ namespace CarteiraVacinaDigital.Model.Entities
         public StateEnum State { get; set; }
         public string Cep { get; set; }
         public OfficeEnum Office { get; set; }
-        public virtual EmployeeLog EmployeeLog { get; set; }
     }
 }

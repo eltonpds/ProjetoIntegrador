@@ -23,7 +23,6 @@ export class VaccineComponent implements OnInit {
           this.vaccines = result
         },
         e => {
-          console.log(e);
         }
       );
       this._router.navigate(['/vacinas']);

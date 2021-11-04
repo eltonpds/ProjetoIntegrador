@@ -59,7 +59,6 @@ export class RegisterVaccineComponent implements OnInit {
   }
 
   public registrarVacina() {
-    console.log('funcionando');
   }
 
 }

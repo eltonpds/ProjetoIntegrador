@@ -30,9 +30,9 @@ import { RegisterVaccineComponent } from './module/register-vaccine/register-vac
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     FuncionarioModule,
     PacientModule,
-    ReactiveFormsModule,
     VacinaModule
   ],
   providers: [],

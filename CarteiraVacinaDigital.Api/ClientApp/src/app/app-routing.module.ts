@@ -17,13 +17,13 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent,
   children: [
-    { path: 'registrarvacina', component: RegisterVaccineComponent, canActivate: [ SaveRouts ] },
+    { path: 'registrarvacina', component: RegisterVaccineComponent, canActivate: [ SaveRouts ]  },
     { path: 'funcionario', component: FuncionarioComponent },
     { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent, canActivate: [ SaveRouts ] },
     { path: 'paciente', component: PacienteComponent },
-    { path: 'cadastro-paciente', component: PacientFormComponent },
+    { path: 'cadastro-paciente', component: PacientFormComponent, canActivate: [ SaveRouts ]  },
     { path: 'vacinas', component: VaccineComponent }, 
-    { path: 'registrar-vacina', component: FormVaccineComponent }
+    { path: 'registrar-vacina', component: FormVaccineComponent, canActivate: [ SaveRouts ]  }
   ]},
   { path: '**', component: PageNotFoundComponent},
 ]
