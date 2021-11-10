@@ -5,6 +5,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './/app-routing.module';
 import { CommonModule } from '@angular/common';
 
+import { NgxMaskModule } from 'ngx-mask';
+
 import { PacientModule } from './module/paciente/pacient.module';
 import { FuncionarioModule } from './module/funcionario/funcionario.module';
 import { HomeComponent } from './home/home.component';
@@ -14,6 +16,7 @@ import { AsideComponent } from './layout/aside/aside.component';
 import { VacinaModule } from './module/vacina/vacina.module';
 import { LoginComponent } from './core/login/login.component';
 import { RegisterVaccineComponent } from './module/register-vaccine/register-vaccine.component';
+import { CalendarioModule } from './module/calendario/calendario.module';
 
 @NgModule({
   declarations: [
@@ -31,9 +34,13 @@ import { RegisterVaccineComponent } from './module/register-vaccine/register-vac
     FormsModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    NgxMaskModule.forRoot({
+      dropSpecialCharacters: false
+    }),
     FuncionarioModule,
     PacientModule,
-    VacinaModule
+    VacinaModule,
+    CalendarioModule
   ],
   providers: [],
   bootstrap: [AppComponent]
