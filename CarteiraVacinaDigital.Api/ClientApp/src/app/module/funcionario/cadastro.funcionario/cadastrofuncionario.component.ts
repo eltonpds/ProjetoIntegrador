@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
-import { NgModule } from '@angular/core';
+
+import { ToastrService } from 'ngx-toastr';
 
 import { State } from 'src/app/core/model/enum/stateEnum';
 import { FuncionarioService } from '../funcionario.service';
@@ -22,7 +23,7 @@ export class CadastroFuncionarioComponent implements OnInit {
   public msg: string;
   public activateSpinner: boolean;
 
-  constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
+  constructor(private _funcionarioService: FuncionarioService, private _router: Router, private _toastr: ToastrService) {
     let employeeSession = sessionStorage.getItem('employeeSession');
 
     if (employeeSession) 
@@ -48,10 +49,11 @@ export class CadastroFuncionarioComponent implements OnInit {
       employeeJson => {
         this.employee = employeeJson,
         this.activateSpinner = false,
+        this._toastr.success('Funcionário cadastrado', 'Sucesso');
         this.voltar();
       },
       e => {
-        this.msg = e.error;
+        this._toastr.error('Não foi possível concluir a solicitação', 'Erro de conexão');
         this.activateSpinner = false;
       }
     );

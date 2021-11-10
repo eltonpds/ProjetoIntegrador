@@ -7,7 +7,10 @@
     </button>
   </div>
   <div class="row">
-    <table class="table table-bordered">
+    <div class="text-center" *ngIf="activateSpinner">
+      <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="activateSpinner"></span>
+    </div>
+    <table class="table table-bordered" *ngIf="calendarios">
       <thead>
         <tr>
           <th scope="col">Informação</th>

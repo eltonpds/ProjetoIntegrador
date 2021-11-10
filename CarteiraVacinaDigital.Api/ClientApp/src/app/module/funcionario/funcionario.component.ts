@@ -5,6 +5,7 @@ import { FuncionarioService } from './funcionario.service';
 import { Office } from './../../core/model/enum/office';
 import { Employee } from './../../core/model/employee';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-funcionario',
@@ -18,7 +19,7 @@ export class FuncionarioComponent implements OnInit {
 
   public activateSpinner: boolean;
 
-  constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
+  constructor(private _funcionarioService: FuncionarioService, private _router: Router, private _toastr: ToastrService) {
     this.activateSpinner = true;
     
     this._funcionarioService.getEmployee()
@@ -27,6 +28,7 @@ export class FuncionarioComponent implements OnInit {
         this.employees = employees;
         this.activateSpinner = false;
       }, error => {
+        this._toastr.error('Não foi possível carregar os dados', 'Erro de conexão');
         this.activateSpinner = false;
       }
     );

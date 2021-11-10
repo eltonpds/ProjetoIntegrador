@@ -1,5 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { State } from 'src/app/core/model/enum/stateEnum';
 
 import { Pacient } from './../../core/model/pacient';
@@ -17,7 +18,7 @@ export class PacienteComponent implements OnInit {
 
   activateSpinner: boolean;
   
-  constructor(private _pacienteService: PacientService, private _router: Router) {
+  constructor(private _pacienteService: PacientService, private _router: Router, private _toastr: ToastrService) {
     this.activateSpinner = true;
     this._pacienteService.getPacient()
       .subscribe(
@@ -26,6 +27,7 @@ export class PacienteComponent implements OnInit {
           this.activateSpinner = false;
         },
         e => {
+          this._toastr.error('Tente novamente mais tarde', 'Erro de conexão')
           this.activateSpinner = false;
         }
       );
