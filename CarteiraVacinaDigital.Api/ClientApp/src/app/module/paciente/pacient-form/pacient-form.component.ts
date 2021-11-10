@@ -1,5 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
+
 import { Employee } from 'src/app/core/model/employee';
 import { State } from 'src/app/core/model/enum/stateEnum';
 import { Pacient } from 'src/app/core/model/pacient';
@@ -18,7 +20,7 @@ export class PacientFormComponent implements OnInit {
   states = Object.values(State);
   activateSpinner: boolean;
 
-  constructor(private _pacientService: PacientService, private _router: Router) {
+  constructor(private _pacientService: PacientService, private _router: Router, private _toastr: ToastrService) {
     let employeeSession = sessionStorage.getItem('employeeSession');
 
     if (employeeSession) 
@@ -43,9 +45,11 @@ export class PacientFormComponent implements OnInit {
       pacientJson => {
         this.pacient = pacientJson,
         this.activateSpinner = false,
+        this._toastr.success('Paciente cadastrado', 'Sucesso');
         this.voltar();
       },
       e => {
+        this._toastr.error('Não foi possível concluir a solicitação');
         this.activateSpinner = false;
       }
     );

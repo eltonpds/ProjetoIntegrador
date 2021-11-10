@@ -6,6 +6,7 @@ import { NgxMaskModule } from 'ngx-mask';
 
 import { PacienteComponent } from './paciente.component';
 import { PacientFormComponent } from './pacient-form/pacient-form.component';
+import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   imports: [

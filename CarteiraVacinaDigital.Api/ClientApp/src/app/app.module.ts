@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
@@ -6,6 +7,7 @@ import { AppRoutingModule } from './/app-routing.module';
 import { CommonModule } from '@angular/common';
 
 import { NgxMaskModule } from 'ngx-mask';
+import { ToastrModule } from 'ngx-toastr';
 
 import { PacientModule } from './module/paciente/pacient.module';
 import { FuncionarioModule } from './module/funcionario/funcionario.module';
@@ -29,6 +31,7 @@ import { CalendarioModule } from './module/calendario/calendario.module';
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
+    BrowserAnimationsModule,
     CommonModule,
     HttpClientModule,
     FormsModule,
@@ -37,6 +40,7 @@ import { CalendarioModule } from './module/calendario/calendario.module';
     NgxMaskModule.forRoot({
       dropSpecialCharacters: false
     }),
+    ToastrModule.forRoot(),
     FuncionarioModule,
     PacientModule,
     VacinaModule,
