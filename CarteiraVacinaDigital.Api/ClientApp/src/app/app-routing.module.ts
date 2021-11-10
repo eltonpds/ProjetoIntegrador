@@ -12,6 +12,8 @@ import { RegisterVaccineComponent } from './module/register-vaccine/register-vac
 import { FormVaccineComponent } from './module/vacina/form-vaccine/form-vaccine.component';
 import { SaveRouts } from './core/autorization/save.routs';
 import { PageNotFoundComponent } from './module/page-not-found/page-not-found.component';
+import { CalendarioComponent } from './module/calendario/calendario.component';
+import { FormCalendarioComponent } from './module/calendario/form-calendario/form-calendario.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -23,7 +25,10 @@ const routes: Routes = [
     { path: 'paciente', component: PacienteComponent },
     { path: 'cadastro-paciente', component: PacientFormComponent, canActivate: [ SaveRouts ]  },
     { path: 'vacinas', component: VaccineComponent }, 
-    { path: 'registrar-vacina', component: FormVaccineComponent, canActivate: [ SaveRouts ]  }
+    { path: 'registrar-vacina', component: FormVaccineComponent, canActivate: [ SaveRouts ] },
+    { path: 'calendario', component: CalendarioComponent }, 
+    { path: 'cadastro-calendario', component: FormCalendarioComponent, canActivate: [ SaveRouts ]  },
+
   ]},
   { path: '**', component: PageNotFoundComponent},
 ]

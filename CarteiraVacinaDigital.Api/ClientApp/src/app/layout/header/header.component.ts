@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FuncionarioService } from 'src/app/module/funcionario/funcionario.service';
 
 @Component({
   selector: 'app-header',
@@ -8,26 +9,25 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _router: Router) { }
+  constructor(private _router: Router, private _employeeService: FuncionarioService) { }
 
   ngOnInit() {
   }
   
   public userLogged(): boolean {
-    if (sessionStorage.getItem("employeeSession"))
-      return true;
-
-    // var userLogged = sessionStorage.getItem("funcionario-autenticado");
-    // if (userLogged == "1") {
-    //   return true;
-    // }
-    // return false;
+    return this._employeeService.employeeAuthenticated();
   }
+
+  get employee() { 
+    return this._employeeService.getEmployeeSession;
+  }
+
   entrar () {
     this._router.navigate(['/login']);
   }
   
   sair() {
+    this._employeeService.clearSession();
     sessionStorage.setItem("employeeSession", "");
     this._router.navigate(['/login']);
   }

@@ -30,7 +30,6 @@ export class FuncionarioComponent implements OnInit {
         this.activateSpinner = false;
       }
     );
-
   }
 
   ngOnInit(): void {

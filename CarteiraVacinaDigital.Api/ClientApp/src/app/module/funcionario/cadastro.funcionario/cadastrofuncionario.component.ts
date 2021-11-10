@@ -1,5 +1,6 @@
 import { Router } from '@angular/router';
 import { Component, Inject, OnInit } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 import { State } from 'src/app/core/model/enum/stateEnum';
 import { FuncionarioService } from '../funcionario.service';
@@ -22,6 +23,12 @@ export class CadastroFuncionarioComponent implements OnInit {
   public activateSpinner: boolean;
 
   constructor(private _funcionarioService: FuncionarioService, private _router: Router) {
+    let employeeSession = sessionStorage.getItem('employeeSession');
+
+    if (employeeSession) 
+      this.employee = JSON.parse(employeeSession);
+    else 
+      this.employee = new Employee();
    }
 
   ngOnInit() {

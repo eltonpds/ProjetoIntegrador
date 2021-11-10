@@ -39,6 +39,7 @@
               id="inputCPF"
               [(ngModel)]="pacient.cpf"
               #cpf="ngModel"
+              mask="000.000.00-00"
               required />
     </div>
   </div>
@@ -113,6 +114,7 @@
               id="inputZip"
               [(ngModel)]="pacient.cep"
               #cep="ngModel"
+              mask="00.000-000"
               required />
     </div>
   </div>
