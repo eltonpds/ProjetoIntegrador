@@ -25,7 +25,6 @@ export class FormCalendarioComponent implements OnInit {
       .subscribe(
         result => {
           this.activateSpinner = false,
-          this._toastr.success('Calendário cadastrado', 'Sucesso');
           this.vaccines = result
         },
         e => {
@@ -48,9 +47,11 @@ export class FormCalendarioComponent implements OnInit {
     .subscribe(
       calenderJson => {
         this.calender = calenderJson,
+        this._toastr.success('Calendário cadastrado', 'Sucesso');
         this.voltar();
       },
       e => {
+        this._toastr.error('Não foi possível concluir a solicitação', 'Erro de conexão');
       }
     );
   }

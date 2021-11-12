@@ -6,6 +6,7 @@ export class Pacient {
   email: string;
   password: string;
   cpf: string;
+  telefone:string;
   cartaoSus: string;
   motherName: string;
   fatherNamme: string;

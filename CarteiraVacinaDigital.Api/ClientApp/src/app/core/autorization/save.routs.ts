@@ -14,8 +14,7 @@ export class SaveRouts implements CanActivate {
         
     }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean  {
-        
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean  {        
         if (this._employeeService.employeeAuthenticated()) {
             return true;
         }

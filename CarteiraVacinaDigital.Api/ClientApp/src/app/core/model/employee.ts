@@ -8,6 +8,7 @@ export class Employee {
   password: string;
   cpf: string;
   adress: string;
+  telefone: string;
   city: string;
   state: State;
   cep:string;

@@ -21,7 +21,7 @@ const routes: Routes = [
   children: [
     { path: 'registrarvacina', component: RegisterVaccineComponent, canActivate: [ SaveRouts ]  },
     { path: 'funcionario', component: FuncionarioComponent },
-    { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent, canActivate: [ SaveRouts ] },
+    { path: 'cadastro-funcionario', component: CadastroFuncionarioComponent, canActivate: [SaveRouts] },
     { path: 'paciente', component: PacienteComponent },
     { path: 'cadastro-paciente', component: PacientFormComponent, canActivate: [ SaveRouts ]  },
     { path: 'vacinas', component: VaccineComponent }, 
