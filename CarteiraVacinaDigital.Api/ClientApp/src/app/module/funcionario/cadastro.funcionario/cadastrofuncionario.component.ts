@@ -41,7 +41,7 @@ export class CadastroFuncionarioComponent implements OnInit {
   }
   
   public register(state, office) {
-    this.activateSpinner = true;
+    // this.activateSpinner = true;
     this.employee.state = state;
     this.employee.office = office;
     this._funcionarioService.registerEmployee(this.employee)

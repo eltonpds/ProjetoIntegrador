@@ -12,7 +12,9 @@ namespace CarteiraVacinaDigital.Model.Entities
         public string CartaoSus { get; set; }
         public string MotherName { get; set; }
         public string FatherName { get; set; }
+        public string Telefone { get; set; }
         public string Adress { get; set; }
+        public string District { get; set; }
         public string City { get; set; }
         public StateEnum State { get; set; }
         public string Cep { get; set; }

@@ -14,37 +14,54 @@ namespace CarteiraVacinaDigital.Repository.Configuration
             builder.HasKey(p => p.Id);
 
             builder
-                .Property(p => p.Name);
+                .Property(p => p.Name)
+                .IsRequired();
 
             builder
-                .Property(p => p.Email);
+                .Property(p => p.Telefone)
+                .IsRequired();
 
             builder
-                .Property(p => p.Password);
+                .Property(p => p.Email)
+                .IsRequired();
 
             builder
-                .Property(p => p.MotherName);
+                .Property(p => p.Password)
+                .IsRequired();
+
+            builder
+                .Property(p => p.MotherName)
+                .IsRequired();
 
             builder
                 .Property(p => p.FatherName);
 
             builder
-                .Property(p => p.Cpf);
+                .Property(p => p.Cpf)
+                .IsRequired();
 
             builder
                 .Property(p => p.CartaoSus);
 
             builder
-                .Property(p => p.Cep);
+                .Property(p => p.Cep)
+                .IsRequired();
 
             builder
-                .Property(p => p.Adress);
+                .Property(p => p.Adress)
+                .IsRequired();
 
             builder
-                .Property(p => p.City);
+                .Property(p => p.District)
+                .IsRequired();
 
             builder
-                .Property(p => p.State);
+                .Property(p => p.City)
+                .IsRequired();
+
+            builder
+                .Property(p => p.State)
+                .IsRequired();
         }
     }
 }

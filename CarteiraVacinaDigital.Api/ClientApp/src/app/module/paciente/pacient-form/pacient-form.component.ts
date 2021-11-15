@@ -6,7 +6,6 @@ import { ToastrService } from 'ngx-toastr';
 import { Employee } from 'src/app/core/model/employee';
 import { State } from 'src/app/core/model/enum/stateEnum';
 import { Pacient } from 'src/app/core/model/pacient';
-import { VaccineService } from '../../vacina/vaccine.service';
 import { PacientService } from '../pacient.service';
 
 @Component({
