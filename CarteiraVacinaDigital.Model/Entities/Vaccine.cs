@@ -1,6 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
@@ -12,6 +12,9 @@ namespace CarteiraVacinaDigital.Model.Entities
         public DateTime ManufacturingDate { get; set; }
         public DateTime Validate { get; set; }
         public string Lote { get; set; }
+        public int? Dose { get; set; }
+        public bool UniqueDose { get; set; }
+        [NotMapped]
         public virtual ICollection<VaccineHealthPost> VaccineHealthPosts { get; set; }
     }
 }

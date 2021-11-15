@@ -1,27 +1,47 @@
 <h1>Registrar Vacina</h1>
 
 <div>
-  <form class="needs-validation" novalidate>
+  <form>
     <div class="form-row">
-      <div class="col-md-6 mb-3">
+      <div class="col-md-4 mb-3">
         <label for="inputVaccine">Nome</label>
         <input type="text"
                name="inputVaccine"
                class="form-control"
                id="inputvaccine"
                [(ngModel)]="vaccine.vaccineName"
-               #inputVaccine="ngModel"
+               #vaccineName="ngModel" 
+               [ngClass]="{
+                'is-invalid':vaccineName.invalid && (vaccineName.dirty || vaccineName.touched),
+                'is-valid': vaccineName.valid && (vaccineName.dirty || vaccineName.touched)
+                }"
                required />
+
+        <div class="invalid-feedback mb-1" role="alert" *ngIf="vaccineName.invalid && (vaccineName.dirty || vaccineName.touched)">
+          <div *ngIf="vaccineName.errors.required">
+            Nome da Vacine é obrigatório
+          </div>
+        </div>
       </div>
-      <div class="col-md-6 mb-3">
+      <div class="col-md-4 mb-3">
         <label for="inputFactoryName">Fábrica</label>
         <input type="text"
                name="inputFactoryName"
                class="form-control"
                id="inputFactoryName"
                [(ngModel)]="vaccine.factoryName"
-               #inputFactoryName="ngModel"
+               #factoryName="ngModel" 
+               [ngClass]="{
+                'is-invalid':factoryName.invalid && (factoryName.dirty || factoryName.touched),
+                'is-valid': factoryName.valid && (factoryName.dirty || factoryName.touched)
+               }"
                required />
+
+          <div class="invalid-feedback mb-1" role="alert" *ngIf="factoryName.invalid && (factoryName.dirty || factoryName.touched)">
+            <div *ngIf="factoryName.errors.required">
+              Fábrica da Vacine é obrigatório
+            </div>
+          </div>
       </div>
 
       <div class="col-md-4 mb-3">
@@ -31,9 +51,21 @@
                class="form-control"
                id="inputManufacturingDate"
                [(ngModel)]="vaccine.manufacturingDate"
-               #inputManufacturingDate="ngModel"
+               #manufacturingDate="ngModel"
+               [ngClass]="{
+                'is-invalid':manufacturingDate.invalid && (manufacturingDate.dirty || manufacturingDate.touched),
+                'is-valid': manufacturingDate.valid && (manufacturingDate.dirty || manufacturingDate.touched)
+               }"
                required />
+
+        <div class="invalid-feedback mb-1" role="alert" *ngIf="manufacturingDate.invalid && (manufacturingDate.dirty || manufacturingDate.touched)">
+          <div *ngIf="manufacturingDate.errors.required">
+            Data de fabricação é obrigatório
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="form-row">
       <div class="col-md-4 mb-3">
         <label for="inputValidate">Data de Validade</label>
         <input type="date"
@@ -41,8 +73,18 @@
                class="form-control"
                id="inputValidate"
                [(ngModel)]="vaccine.validate"
-               #inputValidate="ngModel"
+               #validate="ngModel"
+               [ngClass]="{
+                'is-invalid':validate.invalid && (validate.dirty || validate.touched),
+                'is-valid': validate.valid && (validate.dirty || validate.touched)
+               }"
                required />
+
+               <div class="invalid-feedback mb-1" role="alert" *ngIf="validate.invalid && (validate.dirty || validate.touched)">
+                <div *ngIf="validate.errors.required">
+                  Data de validade é obrigatório
+                </div>
+              </div>
       </div>
       <div class="col-md-4 mb-3">
         <label for="inputLote">Lote</label>
@@ -51,12 +93,49 @@
                class="form-control"
                id="inputLote"
                [(ngModel)]="vaccine.lote"
-               #inputLote="ngModel"
+               #lote="ngModel"
+               [ngClass]="{
+                'is-invalid':lote.invalid && (lote.dirty || lote.touched),
+                'is-valid': lote.valid && (lote.dirty || lote.touched)
+               }"
                required />
+
+               <div class="invalid-feedback mb-1" role="alert" *ngIf="lote.invalid && (lote.dirty || lote.touched)">
+                <div *ngIf="lote.errors.required">
+                  Lote é obrigatório
+                </div>
+              </div>
+      </div>
+      <div class="col-md-4 mb-3">
+        <label for="inputDose">Quantidade de Dose</label>
+        <input type="number"
+              value="0"
+              name="inputDose"
+              class="form-control"
+              id="inputDose"
+              [disabled]="vaccine.uniqueDose"
+              [(ngModel)]="vaccine.dose"
+              #dose="ngModel"
+              required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="col-md-6 mb-3">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox"
+                  name="inputUniqueDose"
+                  class="custom-control-input form-control"
+                  id="inputUniqueDose"
+                  [(ngModel)]="vaccine.uniqueDose"
+                  #uniqueDose="ngModel"
+                  value="true"
+                  required />
+          <label class="custom-control-label" for="inputUniqueDose">Dose Única</label>
+        </div>
       </div>
     </div>
 
     <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
-    <button class="btn btn-primary float-right" type="submit" (click)="registrarVacina()">Registrar Vacina</button>
+    <button class="btn btn-primary float-right" type="submit" [disabled]="activateSpinner" (click)="registrarVacina()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Registrar Vacina</button>
   </form>
 </div>
