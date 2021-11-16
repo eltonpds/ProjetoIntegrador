@@ -6,7 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Calender } from 'src/app/core/model/calender';
 import { Vaccine } from 'src/app/core/model/vaccine';
 import { CalendarioService } from 'src/app/module/calendario/calendario.service';
-import { VaccineService } from '../../vacina/vaccine.service';
+import { VaccineService } from '../../vaccine/vaccine.service';
 
 @Component({
   selector: 'app-form-calendario',

@@ -22,6 +22,18 @@ namespace CarteiraVacinaDigital.Repository.Configuration
             builder
                 .Property(h => h.Address)
                 .IsRequired();
+
+            builder
+                .Property(h => h.District)
+                .IsRequired();
+
+            builder
+                .Property(h => h.City)
+                .IsRequired();
+
+            builder
+                .Property(h => h.State)
+                .IsRequired();
         }
     }
 }

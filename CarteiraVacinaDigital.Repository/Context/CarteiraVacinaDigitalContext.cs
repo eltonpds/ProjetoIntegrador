@@ -15,6 +15,7 @@ namespace CarteiraVacinaDigital.Repository.Context
         public DbSet<Log> Logs { get; set; }
         public DbSet<EmployeeLog> EmployeeLogs { get; set; }
         public DbSet<Calender> Calenders { get; set; }
+        public DbSet<PacientVaccine> PacientVaccines { get; set; }
 
         public CarteiraVacinaDigitalContext(DbContextOptions options) : base(options)
         {
@@ -33,6 +34,7 @@ namespace CarteiraVacinaDigital.Repository.Context
             modelBuilder.ApplyConfiguration(new PacientConfiguration());
             modelBuilder.ApplyConfiguration(new VaccineConfiguration());
             modelBuilder.ApplyConfiguration(new VaccineHealthPostConfiguration());
+            modelBuilder.ApplyConfiguration(new PacientVaccineConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

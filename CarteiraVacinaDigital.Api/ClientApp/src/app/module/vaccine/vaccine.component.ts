@@ -1,10 +1,12 @@
-import { PacienteComponent } from './../paciente/paciente.component';
-import { Pacient } from './../../core/model/pacient';
+import { Pacient } from '../../core/model/pacient';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { ToastrService } from 'ngx-toastr';
+
+import { PacienteComponent } from '../paciente/paciente.component';
 import { Vaccine } from 'src/app/core/model/vaccine';
 import { VaccineService } from './vaccine.service';
-import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -34,7 +36,7 @@ export class VaccineComponent implements OnInit {
   }
 
   telaCadastro() {
-    this._router.navigate(['/registrar-vacina']);
+    this._router.navigate(['/cadastro-vacina']);
   }
 
    ngOnInit() {

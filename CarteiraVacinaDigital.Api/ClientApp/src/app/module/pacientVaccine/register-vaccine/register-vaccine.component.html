@@ -1,0 +1,32 @@
+<h1>Vacinar Paciente</h1>
+
+<div class="col-sm-12">
+  <form>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <label for="inputName">Paciente</label><br />
+        <input type="text" 
+                list="pacient" 
+                name="pacientName" 
+                (change)="changePacient($event)"
+                required />
+        <datalist id="pacient">
+          <option *ngFor="let p of pacients" [value]="p.name">{{p.name}}</option>
+        </datalist>
+      </div>
+      <div class="form-group col-md-6">
+        <label for="inputName">Vacina</label><br />
+        <input type="text"
+                list="vaccine" 
+                name="vaccineName" 
+                (change)="changeVaccine($event)"
+                required />
+        <datalist id="vaccine">
+          <option *ngFor="let v of vaccines" [value]="v.vaccineName">{{v.vaccineName}}</option>
+        </datalist>
+      </div>      
+      <button type="button" class="btn btn-danger" (click)="voltar()">Voltar</button>
+      <button class="btn btn-success float-right" [disabled]="activateSpinner" (click)="registrarVacina()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Registrar Vacina</button>
+    </div>
+  </form>
+</div>

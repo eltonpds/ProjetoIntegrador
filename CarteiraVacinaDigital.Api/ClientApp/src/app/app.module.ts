@@ -15,10 +15,11 @@ import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './layout/header/header.component';
 import { AsideComponent } from './layout/aside/aside.component';
-import { VacinaModule } from './module/vacina/vacina.module';
+import { VaccineModule } from './module/vaccine/vaccine.module';
 import { LoginComponent } from './core/login/login.component';
-import { RegisterVaccineComponent } from './module/register-vaccine/register-vaccine.component';
+import { RegisterVaccineComponent } from './module/pacientVaccine/register-vaccine/register-vaccine.component';
 import { CalendarioModule } from './module/calendario/calendario.module';
+import { PacientVaccineModule } from './module/pacientVaccine/pacientvaccine.module';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,7 @@ import { CalendarioModule } from './module/calendario/calendario.module';
     HeaderComponent,
     HomeComponent,
     AsideComponent,
-    LoginComponent,
-    RegisterVaccineComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -43,8 +43,9 @@ import { CalendarioModule } from './module/calendario/calendario.module';
     ToastrModule.forRoot(),
     FuncionarioModule,
     PacientModule,
-    VacinaModule,
-    CalendarioModule
+    VaccineModule,
+    CalendarioModule,
+    PacientVaccineModule
   ],
   providers: [],
   bootstrap: [AppComponent]

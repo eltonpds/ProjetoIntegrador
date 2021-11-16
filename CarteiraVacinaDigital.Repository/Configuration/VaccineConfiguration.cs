@@ -25,6 +25,12 @@ namespace CarteiraVacinaDigital.Repository.Configuration
 
             builder
                 .Property(v => v.ManufacturingDate);
+
+            builder
+                .Property(v => v.Dose);
+
+            builder
+                .Property(v => v.UniqueDose);
         }
     }
 }

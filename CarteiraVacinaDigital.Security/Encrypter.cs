@@ -36,7 +36,7 @@ namespace CarteiraVacinaDigital.Security
             return employees;
         }
 
-        public static IEnumerable<Pacient> DecryptManyEmployees(IEnumerable<Pacient> pacients)
+        public static IEnumerable<Pacient> DecryptManyPacients(IEnumerable<Pacient> pacients)
         {
             foreach (var item in pacients)
             {

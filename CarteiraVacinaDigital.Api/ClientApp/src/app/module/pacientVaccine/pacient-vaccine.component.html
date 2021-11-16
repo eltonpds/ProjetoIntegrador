@@ -1,9 +1,9 @@
 <div class="container">
-  <h1>Paciente</h1>
+  <h1>Pacientes Vacinados</h1>
 
 <div class="row mb-3">
-    <button type="button" class="btn btn-primary" (click)="telaCadastro()">
-      Cadastrar Paciente
+    <button type="button" class="btn btn-primary" (click)="telaVacinarPaciente()">
+      Vacinar Paciente
     </button>
 </div>
 <div class="row"><div class="text-center" *ngIf="activateSpinner">
@@ -13,8 +13,9 @@
     <thead>
       <tr>
         <th scope="col">Nome</th>
-        <th scope="col">CPF</th>
-        <th scope="col">Nome da Mãe</th>
+        <th scope="col">Vacina</th>
+        <th scope="col">Data</th>
+        <th scope="col">Dose</th>
       </tr>
     </thead>
     <tbody>

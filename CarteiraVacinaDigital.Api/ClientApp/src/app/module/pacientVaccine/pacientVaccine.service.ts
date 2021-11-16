@@ -7,7 +7,7 @@ import { PacientVaccine } from 'src/app/core/model/pacientVaccine';
 @Injectable({
   providedIn: 'root'
 })
-export class RegisterVaccineService {
+export class PacientVaccineService {
   private _baseUrl: string;
 
   constructor(private http: HttpClient, @Inject('BASE_URL') baseUrl: string) { 
@@ -19,7 +19,11 @@ export class RegisterVaccineService {
   }
 
   public registrarPacienteVacinado(pacientVaccine: PacientVaccine): Observable<PacientVaccine> {
-    return this.http.post<PacientVaccine>(this._baseUrl + 'api/pacientVaccine/registerpacient', JSON.stringify(pacientVaccine), {headers: this.headers});
+    return this.http.post<PacientVaccine>(this._baseUrl + 'api/pacientVaccine/RegisterPacientVaccine', JSON.stringify(pacientVaccine), {headers: this.headers});
+  }
+  
+  getPacientsVaccinated(): Observable<PacientVaccine[]> {
+    return this.http.get<PacientVaccine[]>(this._baseUrl + 'api/PacientVaccine');
   }
 
 }

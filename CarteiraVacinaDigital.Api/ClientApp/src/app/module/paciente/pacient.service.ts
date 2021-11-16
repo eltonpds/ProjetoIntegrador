@@ -3,6 +3,7 @@ import { Inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Pacient } from 'src/app/core/model/pacient';
+import { PacientVaccine } from 'src/app/core/model/pacientVaccine';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,6 @@ export class PacientService {
   }
   
   public registerPacient(pacient: Pacient): Observable<Pacient> {
-    return this.http.post<Pacient>(this._baseUrl + 'api/pacient/registerpacient', JSON.stringify(pacient), {headers: this.headers});
+    return this.http.post<Pacient>(this._baseUrl + 'api/pacient/registerPacient', JSON.stringify(pacient), {headers: this.headers});
   }
 }
