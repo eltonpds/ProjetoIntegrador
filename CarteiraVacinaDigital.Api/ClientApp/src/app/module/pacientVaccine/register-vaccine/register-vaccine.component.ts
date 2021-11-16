@@ -74,7 +74,7 @@ export class RegisterVaccineComponent implements OnInit {
   }
 
   public voltar() {
-    this._router.navigate(['/paciente']);
+    this._router.navigate(['/listar-pacientes-vacinadas']);
   }
 
   public registrarVacina() {
