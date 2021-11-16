@@ -6,14 +6,18 @@
       Cadastrar Paciente
     </button>
 </div>
-<div class="row"><div class="text-center" *ngIf="activateSpinner">
-  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="activateSpinner"></span>
-</div>
+<div class="row">
+  <div class="text-center" *ngIf="activateSpinner">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="activateSpinner"></span>
+  </div>
   <table class="table table-bordered" *ngIf="pacients">
     <thead>
       <tr>
         <th scope="col">Nome</th>
         <th scope="col">CPF</th>
+        <th scope="col">Email</th>
+        <th scope="col">Cidade</th>
+        <th scope="col">Estado</th>
         <th scope="col">Nome da Mãe</th>
       </tr>
     </thead>
@@ -21,6 +25,9 @@
       <tr *ngFor="let p of pacients">
         <td>{{p.name}}</td>
         <td>{{p.cpf}}</td>
+        <td>{{p.email}}</td>      
+        <td>{{p.city}}</td>      
+        <td>{{p.state}}</td>      
         <td>{{p.motherName}}</td>      
       </tr>
     </tbody>
