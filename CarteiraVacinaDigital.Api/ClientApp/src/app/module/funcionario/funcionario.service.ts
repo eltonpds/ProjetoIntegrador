@@ -37,7 +37,12 @@ export class FuncionarioService {
   }
 
   employeeAuthenticated(): boolean {
-    return this._employee != null && this._employee.email != '' && this._employee.password != '';
+    this.getEmployeeSession;
+
+    if (this._employee != null && this._employee.email != '' && this._employee.password != '')
+      return true 
+    else 
+      return false;
   }
 
    getEmployee():Observable<Employee[]> {     
