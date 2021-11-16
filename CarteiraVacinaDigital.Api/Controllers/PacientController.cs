@@ -23,7 +23,7 @@ namespace CarteiraVacinaDigital.Api.Controllers
             {
                 var pacients = _pacientRepository.GetAll();
 
-                Security.Encrypter.DecryptManyEmployees(pacients);
+                Security.Encrypter.DecryptManyPacients(pacients);
                 Business.Normalize.NormalizeManyCpfPacient(pacients);
 
                 return Json(pacients);

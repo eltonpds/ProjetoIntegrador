@@ -1,7 +1,5 @@
 ﻿using CarteiraVacinaDigital.Model.Contracts;
 using CarteiraVacinaDigital.Model.Entities;
-using CarteiraVacinaDigital.Security;
-using CarteiraVacinaDigital.Business;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using CarteiraVacinaDigital.Model.Entities.Enums;
@@ -50,8 +48,8 @@ namespace CarteiraVacinaDigital.Api.Controllers
                         return BadRequest("CPF já cadastrado");
                 }
 
-                employee.Password = Encrypter.EncryptString(employee.Password);
-                employee.Cpf = Encrypter.EncryptString(employee.Cpf);
+                employee.Password = Security.Encrypter.EncryptString(employee.Password);
+                employee.Cpf = Security.Encrypter.EncryptString(employee.Cpf);
 
                 _employeeRepository.Insert(employee);
                 return Ok();
@@ -67,7 +65,7 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
-                employee.Password = Encrypter.EncryptString(employee.Password);
+                employee.Password = Security.Encrypter.EncryptString(employee.Password);
 
                 var employeeResult = _employeeRepository.Login(employee.Email, employee.Password);
                 
