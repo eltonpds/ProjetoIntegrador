@@ -5,4 +5,6 @@ export class Vaccine {
   manufacturingDate: Date;
   validate: Date;
   lote: string;
+  dose: number;
+  uniqueDose: boolean;
 }

@@ -1,5 +1,4 @@
 ﻿using CarteiraVacinaDigital.Model.Entities;
-
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -9,42 +8,55 @@ namespace CarteiraVacinaDigital.Repository.Configuration
     {
         public void Configure(EntityTypeBuilder<Employee> builder)
         {
-            builder.HasKey(f => f.Id);
+            builder.HasKey(e => e.Id);
 
             builder
-                .Property(f => f.Name)
+                .Property(e => e.Name)
                 .IsRequired();
 
             builder
-                .Property(f => f.Email)
+                .Property(e => e.Email)
                 .IsRequired();
 
             builder
-                .Property(f => f.Password)
+                .Property(e => e.Password)
                 .IsRequired();
 
             builder
-                .Property(f => f.Cpf)
+                .Property(e => e.Telefone)
                 .IsRequired();
 
             builder
-                .Property(f => f.Coren)
+                .Property(e => e.Cpf)
                 .IsRequired();
 
             builder
-                .Property(f => f.Adress);
+                .Property(e => e.Coren)
+                .IsRequired();
 
             builder
-                .Property(f => f.City);
+                .Property(e => e.Adress)
+                .IsRequired();
 
             builder
-                .Property(f => f.State);
+                .Property(e => e.District)
+                .IsRequired();
 
             builder
-                .Property(f => f.Cep);
+                .Property(e => e.City)
+                .IsRequired();
 
             builder
-                .Property(f => f.Office);
+                .Property(e => e.State)
+                .IsRequired();
+
+            builder
+                .Property(e => e.Cep)
+                .IsRequired();
+
+            builder
+                .Property(e => e.Office)
+                .IsRequired();
         }
     }
 }

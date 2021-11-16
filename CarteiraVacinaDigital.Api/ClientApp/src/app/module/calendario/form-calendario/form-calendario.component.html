@@ -10,8 +10,18 @@
                class="form-control"
                id="inputCalendario"
                [(ngModel)]="calender.information"
-               #inputCalendario="ngModel"
+               #information="ngModel"
+               [ngClass]="{
+                 'is-invalid':information.invalid && (information.dirty || information.touched),
+                 'is-valid': information.valid && (information.dirty || information.touched)
+                 }"
                required />
+
+               <div class="invalid-feedback mb-1" role="alert" *ngIf="information.invalid && (information.dirty || information.touched)">
+                 <div *ngIf="information.errors.required">
+                   Informação sobre a Vacina é obrigatório
+                 </div>
+               </div>
       </div>
       <div class="col-md-6 mb-3">
         <label for="inputAgeGroup">Faixa Etária</label>
@@ -20,8 +30,18 @@
                class="form-control"
                id="inputAgeGroup"
                [(ngModel)]="calender.ageGroup"
-               #inputAgeGroup="ngModel"
+               #ageGroup="ngModel"
+               [ngClass]="{
+                 'is-invalid':ageGroup.invalid && (ageGroup.dirty || ageGroup.touched),
+                 'is-valid': ageGroup.valid && (ageGroup.dirty || ageGroup.touched)
+                 }"
                required />
+
+               <div class="invalid-feedback mb-1" role="alert" *ngIf="ageGroup.invalid && (ageGroup.dirty || ageGroup.touched)">
+                 <div *ngIf="ageGroup.errors.required">
+                   Faixa etária é obrigatório
+                 </div>
+               </div>
       </div>
 
       <div class="col-md-4 mb-3">

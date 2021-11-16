@@ -1,57 +1,144 @@
+<h1>Cadastro Paciente</h1>
+
 <form>
   <div class="form-row">
-    <div class="form-group col-md-12">
-      <label for="inputName">Nome</label>
+    <div class="form-group col-md-6">
+      <label for="inputName">Nome*</label>
       <input type="text"
               name="inputName"
               class="form-control"
               id="inputName"
               [(ngModel)]="pacient.name"
               #name="ngModel"
-              [ngClass]=""
+              placeholder="Digite seu nome"
+              [ngClass]="{
+                'is-invalid':name.invalid && (name.dirty || name.touched),
+                'is-valid': name.valid && (name.dirty || name.touched)
+                }"
               required />
+
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="name.invalid && (name.dirty || name.touched)">
+                <div *ngIf="name.errors.required">
+                  Nome do Paciente é obrigatório
+                </div>
+              </div>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputEmail">Email</label>
+      <label for="inputEmail">Email*</label>
       <input type="email"
       name="inputEmail"
       class="form-control"
       id="inputEmail"
       [(ngModel)]="pacient.email"
-      #inputEmail="ngModel"
+      #email="ngModel"
+      placeholder="seuemail@email.com"
+      [ngClass]="{
+        'is-invalid':email.invalid && (email.dirty || email.touched),
+        'is-valid': email.valid && (email.dirty || email.touched)
+        }"
       required />
+      
+      <div class="invalid-feedback mb-1" role="alert" *ngIf="email.invalid && (email.dirty || email.touched)">
+        <div *ngIf="email.errors.required">
+          Email é obrigatório
+        </div>
+      </div>
     </div>
-    <div class="form-group col-md-3">
-      <label for="inputPassword">Senha</label>
+  </div>
+  <div class="form-row">
+    <div class="form-group col-md-4">
+      <label for="inputPassword">Senha*</label>
       <input type="password"
-              name="inputPassword"
-              class="form-control"
-              id="inputPassword"
-              [(ngModel)]="pacient.password"
-              #password="ngModel"
-              required />
+      name="inputPassword"
+      class="form-control"
+      id="inputPassword"
+      [(ngModel)]="pacient.password"
+      #password="ngModel"
+      placeholder="Digite sua senha"
+      [ngClass]="{
+        'is-invalid':password.invalid && (password.dirty || password.touched),
+        'is-valid': password.valid && (password.dirty || password.touched)
+        }"
+      required />
+
+      <div class="invalid-feedback mb-1" role="alert" *ngIf="password.invalid && (password.dirty || password.touched)">
+        <div *ngIf="password.errors.required">
+          Senha é obrigatório
+        </div>
+      </div>
     </div>
-    <div class="form-group col-md-3">
-      <label for="inputCPF">CPF</label>
+    <div class="form-group col-md-4">
+      <label for="inputCPF">CPF*</label>
       <input type="text"
-              name="inputCPF"
-              class="form-control"
-              id="inputCPF"
-              [(ngModel)]="pacient.cpf"
-              #cpf="ngModel"
-              required />
+      name="inputCPF"
+      class="form-control"
+      id="inputCPF"
+      placeholder="Informe o seu CPF"
+      [(ngModel)]="pacient.cpf"
+      #cpf="ngModel"
+      mask="000.000.000-00"
+      [ngClass]="{
+        'is-invalid':cpf.invalid && (cpf.dirty || cpf.touched),
+        'is-valid': cpf.valid && (cpf.dirty || cpf.touched)
+        }"
+      required />
+
+      <div class="invalid-feedback mb-1" role="alert" *ngIf="cpf.invalid && (cpf.dirty || cpf.touched)">
+        <div *ngIf="cpf.dirty && cpf.touched">
+          Inserir apenas números
+        </div>
+        <div *ngIf="cpf.errors.required">
+          CPF é obrigatório
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputTelefone">Celular*</label>
+      <input type="text"
+      name="inputTelefone"
+      class="form-control"
+      id="inputTelefone"
+      placeholder="(99) 9 9999-9999"
+      [(ngModel)]="pacient.telefone"
+      #telefone="ngModel"
+      mask="(00) 0 0000-0000"
+      [ngClass]="{
+        'is-invalid':telefone.invalid && (telefone.dirty || telefone.touched),
+        'is-valid': telefone.valid && (telefone.dirty || telefone.touched)
+        }"
+      required />
+
+      <div class="invalid-feedback mb-1" role="alert" *ngIf="telefone.invalid && (telefone.dirty || telefone.touched)">
+        <div *ngIf="telefone.dirty">
+          Inserir apenas números
+        </div>
+        <div *ngIf="telefone.errors.required">
+          Telefone é obrigatório
+        </div>
+      </div>
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputMotherName">Nome da Mãe</label>
+      <label for="inputMotherName">Nome da Mãe*</label>
       <input type="text"
               name="inputMotherName"
               class="form-control"
               id="inputMotherName"
               [(ngModel)]="pacient.motherName"
               #motherName = "ngModel"
+              placeholder="Informe o nome da sua mãe"              
+              [ngClass]="{
+                'is-invalid':motherName.invalid && (motherName.dirty || motherName.touched),
+                'is-valid': motherName.valid && (motherName.dirty || motherName.touched)
+                }"
               required />
+
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="motherName.invalid && (motherName.dirty || motherName.touched)">
+                <div *ngIf="motherName.errors.required">
+                  Nome da mãe é obrigatório
+                </div>
+              </div>
     </div>
     <div class="form-group col-md-6">
       <label for="inputFatherName">Nome do Pai</label> 
@@ -60,62 +147,139 @@
               class="form-control"
               id="inputFatherName"
               [(ngModel)]="pacient.fatherName"
-              #FatherName = "ngModel"
-              required />
+              placeholder="Informe o nome do seu pai"
+              #fatherName = "ngModel" />              
     </div>
   </div>
   <div class="form-row">
     <div class="form-group col-md-6">
-      <label for="inputAddress">Endereço</label>
+      <label for="inputAddress">Endereço*</label>
       <input type="text"
               name="inputAddress"
               class="form-control"
               id="inputAddress"
+              placeholder="Rua, Av., Trav., número, Bairro"
               [(ngModel)]="pacient.adress"
               #adress = "ngModel"
+              [ngClass]="{
+                'is-invalid':adress.invalid && (adress.dirty || adress.touched),
+                'is-valid': adress.valid && (adress.dirty || adress.touched)
+                }"
               required />
+
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="adress.invalid && (adress.dirty || adress.touched)">
+                <div *ngIf="adress.errors.required">
+                  Endereço é obrigatório
+                </div>
+              </div>
     </div>
     <div class="form-group col-md-6">
-      <label for="inputCartaoSus">Cartão SUS</label>
+      <label for="inputCartaoSus">Cartão SUS*</label>
       <input type="text"
               name="inputCartaoSus"
               class="form-control"
               id="inputCartaoSus"
+              placeholder="Informe o número do seu cartão"
+              maxlength="15"
               [(ngModel)]="pacient.cartaoSus"
               #CartaoSus = "ngModel"
+              [ngClass]="{
+                'is-invalid':CartaoSus.invalid && (CartaoSus.dirty || CartaoSus.touched),
+                'is-valid': CartaoSus.valid && (CartaoSus.dirty || CartaoSus.touched)
+                }"
               required />
+              
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="CartaoSus.invalid && (CartaoSus.dirty || CartaoSus.touched)">
+                <div *ngIf="CartaoSus.dirty">
+                  Inserir apenas números e letras
+                </div>
+                <div *ngIf="CartaoSus.errors.required">
+                  Cartão SUS é obrigatório
+                </div>
+              </div>
     </div>
   </div>
   <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">Cidade</label>
-      <input type="text"
-              name="inputCity"
-              class="form-control"
-              id="inputCity"
-              [(ngModel)]="pacient.city"
-              #city="ngModel"
-              required />
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputState">Estado</label>
-      <select id="inputState" class="form-control" name="state" [(ngModel)]="state">
-        <option *ngFor="let state of states" [value]="state">{{state}}</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-row">
-    <div class="form-group">
-      <label for="inputZip">CEP</label>
+    <div class="form-group col-md-2">
+      <label for="inputZip">CEP*</label>
       <input type="text"
               class="form-control"
               name="inputZip"
               id="inputZip"
               [(ngModel)]="pacient.cep"
               #cep="ngModel"
+              mask="00.000-000"
+              maxlength="10"
+              placeholder="Informe o CEP"
+              [ngClass]="{
+                'is-invalid':cep.invalid && (cep.dirty || cep.touched),
+                'is-valid': cep.valid && (cep.dirty || cep.touched)
+                }"
               required />
+
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="cep.invalid && (cep.dirty || cep.touched)">
+                <div *ngIf="cep.errors.required">
+                  CEP é obrigatório
+                </div>
+              </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputDistrict">Bairro*</label>
+      <input type="text"
+              name="inputDistrict"
+              class="form-control"
+              id="inputDistrict"
+              placeholder="Informe o seu Bairro"
+              [(ngModel)]="pacient.district"
+              #district="ngModel"
+              [ngClass]="{
+                'is-invalid':district.invalid && (district.dirty || district.touched),
+                'is-valid': district.valid && (district.dirty || district.touched)
+                }"
+              required />
+
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="district.invalid && (district.dirty || district.touched)">
+                <div *ngIf="district.errors.required">
+                  Bairro é obrigatório
+                </div>
+              </div>
+    </div>
+    <div class="form-group col-md-4">
+      <label for="inputCity">Cidade*</label>
+      <input type="text"
+              name="inputCity"
+              class="form-control"
+              id="inputCity"
+              placeholder="Informe a sua cidade"
+              [(ngModel)]="pacient.city"
+              #city="ngModel"
+              [ngClass]="{
+                'is-invalid':city.invalid && (city.dirty || city.touched),
+                'is-valid': city.valid && (city.dirty || city.touched)
+                }"
+              required />
+
+              <div class="invalid-feedback mb-1" role="alert" *ngIf="city.invalid && (city.dirty || city.touched)">
+                <div *ngIf="city.errors.required">
+                  Cidade é obrigatório
+                </div>
+              </div>
+    </div>
+    <div class="form-group col-md-2">
+      <label for="inputState">Estado*</label>
+      <select id="inputState" 
+              class="form-control" 
+              name="state" 
+              [(ngModel)]="state"
+              required>
+        <option selected>UF</option>
+        <option *ngFor="let state of states" [value]="state">{{state}}</option>
+      </select>     
     </div>
   </div>
+  <div>
+    <small>Campos com <b>*</b> são obrigatórios</small>
+  </div><br />
   <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
   <button type="submit" class="btn btn-primary float-right" [disabled]="activateSpinner" (click)="register(state)"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Cadastrar</button>
 </form>
