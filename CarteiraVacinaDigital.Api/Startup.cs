@@ -38,6 +38,7 @@ namespace CarteiraVacinaDigital.Api
             services.AddScoped<IVaccineRepository, VaccineRepository>();
             services.AddScoped<ICalenderRepository, CalenderRepository>();
             services.AddScoped<IEmployeeLogRepository, EmployeeLogRepository>();
+            services.AddScoped<IPacientVaccineRepository, PacientVaccineRepository>();
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
