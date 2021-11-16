@@ -1,0 +1,31 @@
+<div class="container">
+  <h1>Pacientes Vacinados</h1>
+
+<div class="row mb-3">
+    <button type="button" class="btn btn-primary" (click)="telaVacinarPaciente()">
+      Vacinar Paciente
+    </button>
+</div>
+<div class="row"><div class="text-center" *ngIf="activateSpinner">
+  <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="activateSpinner"></span>
+</div>
+  <table class="table table-bordered" *ngIf="pacients">
+    <thead>
+      <tr>
+        <th scope="col">Nome</th>
+        <th scope="col">Vacina</th>
+        <th scope="col">Data</th>
+        <th scope="col">Dose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of pacients">
+        <td>{{p.name}}</td>
+        <td>{{p.cpf}}</td>
+        <td>{{p.motherName}}</td>      
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+</div>
