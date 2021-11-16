@@ -24,9 +24,9 @@
         <datalist id="vaccine">
           <option *ngFor="let v of vaccines" [value]="v.vaccineName">{{v.vaccineName}}</option>
         </datalist>
-      </div>     
+      </div>      
     </div>
-    <button type="button" class="btn btn-danger" (click)="voltar()">Voltar</button>
-    <button class="btn btn-success float-right" [disabled]="activateSpinner" (click)="registrarVacina()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Registrar Vacina</button>
+      <button type="button" class="btn btn-danger" (click)="voltar()">Voltar</button>
+      <button class="btn btn-success float-right" [disabled]="activateSpinner" (click)="registrarVacina()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Registrar Vacina</button>
   </form>
 </div>
