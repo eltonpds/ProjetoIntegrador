@@ -39,12 +39,12 @@
           Senha deve ser preenchido
         </div>
       </div>
-  
-      <button type="submit" class="btn btn-primary mt-2 float-right" [disabled]="ativar_spinner" (click)="entrar()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span> Entrar</button>
-  
+      
       <div class="alert alert-danger" *ngIf="msg">
         {{msg}}
       </div>
+  
+      <button type="submit" class="btn btn-primary mt-2 float-right" [disabled]="ativar_spinner" (click)="entrar()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="ativar_spinner"></span> Entrar</button>        
     </form>
     
 </div>

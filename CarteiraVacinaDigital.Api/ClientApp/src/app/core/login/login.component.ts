@@ -31,15 +31,13 @@ export class LoginComponent implements OnInit {
     this._employeeService.login(this.employee)
       .subscribe(
         employeeJson => {
-          this.employee = employeeJson;
+          this._employeeService.setEmployeeSession = employeeJson;
 
           if (this.returnUrl == null) {
             this._router.navigate(['/']);
           } else {
             this._router.navigate([this.returnUrl]);
           }
-
-          sessionStorage.setItem('employeeSession', JSON.stringify(this.employee));
         }, err => {
           this.msg = err.error;
           this.ativar_spinner = false;

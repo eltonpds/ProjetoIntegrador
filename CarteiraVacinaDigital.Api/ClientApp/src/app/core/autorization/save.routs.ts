@@ -1,19 +1,21 @@
 import { Injectable } from "@angular/core";
 import { Router, CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
+import { FuncionarioService } from "src/app/module/funcionario/funcionario.service";
+import { Employee } from "../model/employee";
 
 @Injectable({
     providedIn: 'root'
 })
 export class SaveRouts implements CanActivate {
     
-    constructor(private _router: Router) {
+    employee = new Employee();
+
+    constructor(private _router: Router, private _employeeService: FuncionarioService) {
         
     }
 
-    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean  {
-        var authenticated = sessionStorage.getItem("funcionario-autenticado");
-
-        if (authenticated == "1") {
+    canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean  {        
+        if (this._employeeService.employeeAuthenticated()) {
             return true;
         }
 
