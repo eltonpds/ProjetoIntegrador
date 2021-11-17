@@ -9,7 +9,7 @@ export class Pacient {
   telefone:string;
   cartaoSus: string;
   motherName: string;
-  fatherNamme: string;
+  fatherName: string;
   adress: string;
   district: string;
   city: string;

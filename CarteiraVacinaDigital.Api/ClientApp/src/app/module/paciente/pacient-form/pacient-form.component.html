@@ -269,8 +269,8 @@
       <label for="inputState">Estado*</label>
       <select id="inputState" 
               class="form-control" 
-              name="state" 
-              [(ngModel)]="state"
+              name="states" 
+              [(ngModel)]="states"
               required>
         <option selected>UF</option>
         <option *ngFor="let state of states" [value]="state">{{state}}</option>
@@ -281,5 +281,5 @@
     <small>Campos com <b>*</b> são obrigatórios</small>
   </div><br />
   <button type="submit" class="btn btn-danger" (click)="voltar()">Voltar</button>
-  <button type="submit" class="btn btn-primary float-right" [disabled]="activateSpinner" (click)="register(state)"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Cadastrar</button>
+  <button type="submit" class="btn btn-primary float-right" [disabled]="activateSpinner" (click)="register(states)"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Cadastrar</button>
 </form>

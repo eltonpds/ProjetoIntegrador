@@ -19,7 +19,7 @@ import { VaccineModule } from './module/vaccine/vaccine.module';
 import { LoginComponent } from './core/login/login.component';
 import { RegisterVaccineComponent } from './module/pacientVaccine/register-vaccine/register-vaccine.component';
 import { CalendarioModule } from './module/calendario/calendario.module';
-import { PacientVaccineModule } from './module/pacientVaccine/pacientvaccine.module';
+import { PacientVaccineModule } from './module/pacientVaccine/pacientVaccine.module';
 
 @NgModule({
   declarations: [

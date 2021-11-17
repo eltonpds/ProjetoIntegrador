@@ -2,9 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { ToastrService } from 'ngx-toastr';
-import { Pacient } from 'src/app/core/model/pacient';
-import { PacientVaccine } from 'src/app/core/model/pacientVaccine';
 
+import { PacientVaccine } from 'src/app/core/model/pacientVaccine';
 import { PacientVaccineService } from './pacientVaccine.service';
 
 @Component({
@@ -15,11 +14,14 @@ import { PacientVaccineService } from './pacientVaccine.service';
 export class PacientVaccineComponent implements OnInit {
 
   pacientVaccine: PacientVaccine[];
+  activateSpinner: boolean;
 
   constructor(private _pacienteVaccineService: PacientVaccineService, private _router: Router, private _toastr: ToastrService) {
+    this.activateSpinner = true;
     this._pacienteVaccineService.getPacientsVaccinated()
     .subscribe(
       data => {
+        this.activateSpinner = false;
         this.pacientVaccine = data;
       }
     );
