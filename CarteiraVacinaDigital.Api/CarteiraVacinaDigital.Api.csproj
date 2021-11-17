@@ -1,7 +1,7 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
     <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
     <IsPackable>false</IsPackable>
@@ -10,12 +10,8 @@
 
     <!-- Set this to true if you enable server-side prerendering -->
     <BuildServerSideRenderer>false</BuildServerSideRenderer>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.App" />
-    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
-  </ItemGroup>
 
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
@@ -24,10 +20,88 @@
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
-<<<<<<< HEAD
-=======
   <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp3.1\appsettings.Development.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\appsettings.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.deps.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.runtimeconfig.dev.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.runtimeconfig.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\config.json" />
+    <Content Include="bin\Debug\netcoreapp3.1\libman.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.dll.config" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.exe" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Api.pdb" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Business.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Business.pdb" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Model.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Model.pdb" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Repository.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Repository.pdb" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Security.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\CarteiraVacinaDigital.Security.pdb" />
+    <None Include="bin\Debug\netcoreapp3.1\Castle.Core.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.JsonPatch.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.NodeServices.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.SpaServices.Extensions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Proxies.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Caching.Memory.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Binder.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.CommandLine.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.EnvironmentVariables.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.FileExtensions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.Json.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Configuration.UserSecrets.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyInjection.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Physical.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileSystemGlobbing.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Abstractions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Configuration.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Console.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.Debug.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventLog.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Logging.EventSource.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.ConfigurationExtensions.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Options.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Microsoft.Extensions.Primitives.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\MySqlConnector.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Newtonsoft.Json.Bson.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Pomelo.EntityFrameworkCore.MySql.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\Pomelo.JsonObject.dll" />
+    <None Include="bin\Debug\netcoreapp3.1\System.ComponentModel.Annotations.dll" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.NodeServices" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CarteiraVacinaDigital.Business\CarteiraVacinaDigital.Business.csproj" />
     <ProjectReference Include="..\CarteiraVacinaDigital.Repository\CarteiraVacinaDigital.Repository.csproj" />
+    <ProjectReference Include="..\CarteiraVacinaDigital.Security\CarteiraVacinaDigital.Security.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,7 +110,12 @@
     </Content>
   </ItemGroup>
 
->>>>>>> desenvolvimento
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp3.0\" />
+    <Folder Include="bin\Debug\netstandard2.0\" />
+    <Folder Include="bin\Release\netcoreapp3.1\" />
+  </ItemGroup>
+
   <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
     <!-- Ensure Node.js is installed -->
     <Exec Command="node --version" ContinueOnError="true">

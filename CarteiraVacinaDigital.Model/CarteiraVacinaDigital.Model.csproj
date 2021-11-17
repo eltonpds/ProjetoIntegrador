@@ -12,7 +12,23 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Model.deps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Model.dll" />
+    <None Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Model.pdb" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp3.1.415\" />
+    <Folder Include="bin\Debug\netcoreapp3.1\" />
+    <Folder Include="bin\Release\netstandard2.0\" />
   </ItemGroup>
 
 </Project>

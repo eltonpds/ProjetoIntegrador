@@ -5,7 +5,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="bin\Debug\netcoreapp2.2\CarteiraVacinaDigital.Business.deps.json" />
+    <Content Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Business.deps.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="bin\Debug\netcoreapp2.2\CarteiraVacinaDigital.Business.dll" />
+    <None Include="bin\Debug\netcoreapp2.2\CarteiraVacinaDigital.Business.pdb" />
+    <None Include="bin\Debug\netcoreapp2.2\CarteiraVacinaDigital.Model.dll" />
+    <None Include="bin\Debug\netcoreapp2.2\CarteiraVacinaDigital.Model.pdb" />
+    <None Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Business.dll" />
+    <None Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Business.pdb" />
+    <None Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Model.dll" />
+    <None Include="bin\Debug\netstandard2.0\CarteiraVacinaDigital.Model.pdb" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CarteiraVacinaDigital.Model\CarteiraVacinaDigital.Model.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="bin\Debug\netcoreapp3.1\" />
+    <Folder Include="bin\Release\netstandard2.0\" />
   </ItemGroup>
 
 </Project>
