@@ -43,6 +43,8 @@ export class FormCalendarioComponent implements OnInit {
   }
   
   public registerCalendario() {
+    this.calender.vaccineID = Number(this.calender.vaccineID);
+    console.log(this.calender);
     this._calenderService.registerCalender(this.calender)
     .subscribe(
       calenderJson => {

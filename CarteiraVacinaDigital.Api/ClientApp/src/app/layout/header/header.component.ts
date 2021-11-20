@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Location } from '@angular/common';
 import { FuncionarioService } from 'src/app/module/funcionario/funcionario.service';
 
 @Component({
@@ -9,27 +10,39 @@ import { FuncionarioService } from 'src/app/module/funcionario/funcionario.servi
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private _router: Router, private _employeeService: FuncionarioService) { }
+  userLogged: boolean;
+
+  constructor(private _router: Router, private _employeeService: FuncionarioService, private _location: Location) { 
+  }
 
   ngOnInit() {
   }
-  
-  public userLogged(): boolean {
-    return this._employeeService.employeeAuthenticated();
-  }
 
   get employee() { 
-    return this._employeeService.getEmployeeSession;
+    let employeeSession =  this._employeeService.getEmployeeSession;
+
+    if (employeeSession != null) {
+      this.userLogged = true;
+      return employeeSession;
+    }
+    else {
+      this.userLogged = false;
+      this.entrar();
+    }
   }
 
   entrar () {
     this._router.navigate(['/login']);
   }
-  
+   
   sair() {
     this._employeeService.clearSession();
     sessionStorage.setItem("employeeSession", "");
     this._router.navigate(['/login']);
   }
+
+  isLoginRouteActivated(): boolean{
+    return this._location.path() === '/login';
+}
 
 }
