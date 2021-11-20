@@ -11,6 +11,7 @@ namespace CarteiraVacinaDigital.Model.Entities.Enums
         AM,
         AP,
         BA,
+        BH,
         CE,
         DF,
         ES,
