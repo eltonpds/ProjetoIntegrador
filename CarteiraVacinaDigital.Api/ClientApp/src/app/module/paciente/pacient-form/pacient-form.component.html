@@ -272,7 +272,6 @@
               name="states" 
               [(ngModel)]="states"
               required>
-        <option selected>UF</option>
         <option *ngFor="let state of states" [value]="state">{{state}}</option>
       </select>     
     </div>

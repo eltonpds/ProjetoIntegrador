@@ -27,6 +27,7 @@ export class FuncionarioService {
 
   get getEmployeeSession(): Employee {
     let employeeSession = sessionStorage.getItem('employeeSession');
+    
     this._employee = JSON.parse(employeeSession);
     return this._employee;
   }

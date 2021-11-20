@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 
 import { Employee } from 'src/app/core/model/employee';
-import { State } from 'src/app/core/model/enum/stateEnum';
+import { State, StateEnum } from 'src/app/core/model/enum/stateEnum';
 import { Pacient } from 'src/app/core/model/pacient';
 import { PacientService } from '../pacient.service';
 
@@ -18,6 +18,7 @@ export class PacientFormComponent implements OnInit {
   pacient: Pacient;  
   private _employee: Employee;
   states = Object.values(State);
+  statesEnum: StateEnum[];
   activateSpinner: boolean;
 
   constructor(private _pacientService: PacientService, private _router: Router, private _toastr: ToastrService) {
@@ -39,7 +40,7 @@ export class PacientFormComponent implements OnInit {
 
   public register(state) { 
     this.activateSpinner = true;
-    this.pacient.state = state;
+    this.pacient.state = parseInt(StateEnum[state]);
     this._pacientService.registerPacient(this.pacient)
     .subscribe(
       pacientJson => {

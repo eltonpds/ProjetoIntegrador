@@ -13,6 +13,6 @@ export class Pacient {
   adress: string;
   district: string;
   city: string;
-  state: State;
+  state: number;
   cep: string;
 }
