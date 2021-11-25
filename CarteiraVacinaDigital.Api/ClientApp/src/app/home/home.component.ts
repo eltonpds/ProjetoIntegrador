@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Employee } from '../core/model/employee';
 
-import { Office, OfficeLabelMapping } from '../core/model/enum/office';
+import { Office, OfficeEnum, OfficeLabelMapping } from '../core/model/enum/office';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,7 @@ import { Office, OfficeLabelMapping } from '../core/model/enum/office';
 })
 export class HomeComponent implements OnInit {
 
-  public employee;
+  public employee: Employee;
   public officeName: string;
   OfficeLabelMapping = OfficeLabelMapping;
   
@@ -18,34 +19,6 @@ export class HomeComponent implements OnInit {
     let employeeSession = sessionStorage.getItem('employeeSession');
     if (employeeSession) {
       this.employee = JSON.parse(employeeSession);
-      this.officeName =  Office[this.employee.office];
-      
-      switch (this.employee.office) {
-        case 0: {
-          this.officeName = Office.Administrador;
-          break;
-        }
-        case 1: {
-          this.officeName = Office.Tecnico;
-          break;
-        }
-        case 2: {
-          this.officeName = Office.Enfermeiro;
-          break;
-        } 
-        case 3: {
-          this.officeName = Office.Medico;
-          break;
-        }
-        case 4: {
-          this.officeName = Office.Aprendiz;
-          break;
-        }
-        case 5: {
-          this.officeName = Office.Estagiario;
-          break;
-        }
-      }
     } else {
       this._router.navigate(['/login']);
     }

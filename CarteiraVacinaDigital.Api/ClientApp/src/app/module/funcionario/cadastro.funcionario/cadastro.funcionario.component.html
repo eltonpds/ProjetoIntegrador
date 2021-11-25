@@ -9,7 +9,7 @@
               class="form-control"
               id="inputName"
               placeholder="Digite seu nome"
-              [(ngModel)]="employee.name"
+              [(ngModel)]="employee.Name"
               #name="ngModel"
               [ngClass]="{
                 'is-invalid':name.invalid && (name.dirty || name.touched),
@@ -30,7 +30,7 @@
       class="form-control"
       id="inputTelefone"
       placeholder="(99) 9 9999-9999"
-      [(ngModel)]="employee.telefone"
+      [(ngModel)]="employee.Telefone"
       #telefone="ngModel"
       mask="(00) 0 0000-0000"
       [ngClass]="{
@@ -57,7 +57,7 @@
       class="form-control"
       placeholder="seuemail@email.com"
       id="inputEmail"
-      [(ngModel)]="employee.email"
+      [(ngModel)]="employee.Email"
       #email="ngModel"
       [ngClass]="{
         'is-invalid':email.invalid && (email.dirty || email.touched),
@@ -126,7 +126,7 @@
               class="form-control"
               id="inputAddress"
               placeholder="Rua, Av., Trav., número, Bairro"
-              [(ngModel)]="employee.adress"
+              [(ngModel)]="employee.Adress"
               #adress = "ngModel"
               [ngClass]="{
                 'is-invalid':adress.invalid && (adress.dirty || adress.touched),
@@ -146,9 +146,9 @@
               name="inputCoren"
               class="form-control"
               id="inputCoren"
-              placeholder="Informe o Coren"
+              placeholder="000000-SS"
               mask="000000-SS"
-              [(ngModel)]="employee.coren"
+              [(ngModel)]="employee.Coren"
               #coren = "ngModel"
               [ngClass]="{
                 'is-invalid':coren.invalid && (coren.dirty || coren.touched),
@@ -202,7 +202,7 @@
               class="form-control"
               id="inputDistrict"
               placeholder="Informe o seu Bairro"
-              [(ngModel)]="employee.district"
+              [(ngModel)]="employee.District"
               #district="ngModel"
               [ngClass]="{
                 'is-invalid':district.invalid && (district.dirty || district.touched),
@@ -223,7 +223,7 @@
               class="form-control"
               id="inputCity"
               placeholder="Informe a sua cidade"
-              [(ngModel)]="employee.city"
+              [(ngModel)]="employee.City"
               #city="ngModel"
               [ngClass]="{
                 'is-invalid':city.invalid && (city.dirty || city.touched),

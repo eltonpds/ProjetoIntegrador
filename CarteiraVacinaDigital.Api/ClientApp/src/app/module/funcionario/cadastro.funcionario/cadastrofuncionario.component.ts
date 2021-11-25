@@ -48,8 +48,8 @@ export class CadastroFuncionarioComponent implements OnInit {
   
   public register(state, office) {
     this.activateSpinner = true;
-    this.employee.state = parseInt(StateEnum[state]);
-    this.employee.office = parseInt(OfficeEnum[office]);
+    this.employee.State = parseInt(StateEnum[state]);
+    this.employee.Office = parseInt(OfficeEnum[office]);
     this._funcionarioService.registerEmployee(this.employee)
     .subscribe(
       employeeJson => {

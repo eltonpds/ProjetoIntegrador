@@ -3,6 +3,7 @@ import { Injectable, Inject } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { Employee } from 'src/app/core/model/employee';
+import { OfficeEnum } from 'src/app/core/model/enum/office';
 
 @Injectable({
   providedIn: 'root'
@@ -37,7 +38,8 @@ export class FuncionarioService {
     }
   }
 
-  set setEmployeeSession(employee: Employee) {
+  set setEmployeeSession(employee: Employee) {    
+    employee.OfficeName = OfficeEnum[employee.Office];
     sessionStorage.setItem('employeeSession', JSON.stringify(employee));
     this._employee = employee;
   }
@@ -45,7 +47,7 @@ export class FuncionarioService {
   employeeAuthenticated(): boolean {
     this.getEmployeeSession;
 
-    if (this._employee != null && this._employee.email != '' && this._employee.password != '')
+    if (this._employee != null && this._employee.Email != '' && this._employee.Password != '')
       return true 
     else 
       return false;

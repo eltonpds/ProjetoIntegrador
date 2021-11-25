@@ -1,16 +1,16 @@
 export class Employee {
-  id: number;
-  name: string;
-  email: string;
-  password: string;
-  cpf: string;
-  telefone: string;
-  adress: string;
-  district: string;
-  city: string;
-  state: number;
-  cep:string;
-  coren: string;
-  office: number;
-  officeName: string;
+  Id: number;
+  Name: string;
+  Email: string;
+  Password: string;
+  Cpf: string;
+  Telefone: string;
+  Adress: string;
+  District: string;
+  City: string;
+  State: number;
+  Cep:string;
+  Coren: string;
+  Office: number;
+  OfficeName: string;
 }

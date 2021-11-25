@@ -18,14 +18,16 @@
             <th scope="col">Email</th>
             <th scope="col">Cpf</th>
             <th scope="col">Coren</th>
+            <th scope="col">Cargo</th>
           </tr>
         </thead>
         <tbody>
           <tr *ngFor="let e of employees" >
-            <td>{{e.name}}</td>
-            <td>{{e.email}}</td>
-            <td>{{e.cpf}}</td>
-            <td>{{e.coren}}</td>
+            <td>{{e.Name}}</td>
+            <td>{{e.Email}}</td>
+            <td>{{e.Cpf}}</td>
+            <td>{{e.Coren}}</td>
+            <td>{{e.OfficeName}}</td>
           </tr>
           <tr>
         </tbody>

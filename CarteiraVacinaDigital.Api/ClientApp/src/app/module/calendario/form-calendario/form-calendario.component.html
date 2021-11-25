@@ -46,7 +46,7 @@
 
       <div class="col-md-4 mb-3">
         <label for="inputVaccine">Vacina</label>
-        <select id="inputVaccine" class="form-control" name="vaccine" [(ngModel)]="calender.vaccineID">
+        <select id="inputVaccine" class="form-control" name="vaccine" [(ngModel)]="calender.VaccineID">
           <option *ngFor="let vaccine of vaccines" [value]="vaccine.Id">{{vaccine.VaccineName}}</option>
         </select>
       </div>
