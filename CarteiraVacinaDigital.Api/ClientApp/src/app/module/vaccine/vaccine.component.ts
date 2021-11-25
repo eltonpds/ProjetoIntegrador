@@ -29,6 +29,7 @@ export class VaccineComponent implements OnInit {
           this.vaccines = result
         },
         e => {
+          this.activateSpinner = false;
           this._toastr.error('Não foi possível carregar os dados', 'Erro de conexão');
         }
       );

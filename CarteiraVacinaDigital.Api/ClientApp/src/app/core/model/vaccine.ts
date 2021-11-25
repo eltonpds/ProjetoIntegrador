@@ -1,10 +1,10 @@
 export class Vaccine {
-  id: number;
-  vaccineName: string;
-  factoryName: string;
-  manufacturingDate: Date;
-  validate: Date;
-  lote: string;
-  dose: number;
-  uniqueDose: boolean;
+  Id: number;
+  VaccineName: string;
+  FactoryName: string;
+  ManufacturingDate: Date;
+  Validate: Date;
+  Lote: string;
+  Dose: number;
+  UniqueDose: boolean;
 }

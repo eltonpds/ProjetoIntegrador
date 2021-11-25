@@ -6,7 +6,10 @@
       Cadastrar Vacina
     </button>
   </div>
-  <table class="table table-bordered">
+  <div class="row"><div class="text-center" *ngIf="activateSpinner">
+    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="activateSpinner"></span>
+  </div>
+  <table class="table table-bordered" *ngIf="vaccines">
     <thead>
       <tr>
         <th scope="row">Código</th>
@@ -14,15 +17,18 @@
         <th scope="col">Fábrica</th>
         <th scope="col">Data de Fabricação</th>
         <th scope="col">Data de Validate</th>
+        <th scope="col">Dose</th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let v of vaccines">
-        <th scope="row">{{v.id}}</th>
-        <td>{{v.vaccineName}}</td>
-        <td>{{v.factoryName}}</td>
-        <td>{{v.manufacturingDate}}</td>
-        <td>{{v.validate}}</td>
+        <th scope="row">{{v.Id}}</th>
+        <td>{{v.VaccineName}}</td>
+        <td>{{v.FactoryName}}</td>
+        <td>{{v.ManufacturingDate | date : 'dd/MM/yyyy' }}</td>
+        <td>{{v.Validate | date : 'dd/MM/yyyy' }}</td>
+        <td *ngIf="v.UniqueDose">Dose Única</td>
+        <td *ngIf="!v.UniqueDose">{{v.Dose}}</td>
       </tr>
     </tbody>
   </table>

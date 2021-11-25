@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarteiraVacinaDigital.Model.Entities
@@ -6,11 +7,14 @@ namespace CarteiraVacinaDigital.Model.Entities
     public class PacientVaccine
     {
         public int ID { get; set; }
-        public int PacientID { get; set; }
-        public int VaccineID { get; set; }
+        public virtual int PacientID { get; set; }
+        public virtual int VaccineID { get; set; }
+        public DateTime DateVaccined { get; set; }
+        public bool UniqueDose { get; set; }
+        public int? Dose { get; set; }
         [NotMapped]
-        public virtual IEnumerable<Pacient> Pacient { get; set; }
+        public virtual Pacient Pacient { get; set; }
         [NotMapped]
-        public virtual IEnumerable<Vaccine> Vaccine { get; set; }
+        public virtual Vaccine Vaccine { get; set; }
     }
 }

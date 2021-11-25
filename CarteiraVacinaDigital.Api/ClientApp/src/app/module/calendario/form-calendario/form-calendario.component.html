@@ -9,7 +9,7 @@
                name="inputCalendario"
                class="form-control"
                id="inputCalendario"
-               [(ngModel)]="calender.information"
+               [(ngModel)]="calender.Information"
                #information="ngModel"
                [ngClass]="{
                  'is-invalid':information.invalid && (information.dirty || information.touched),
@@ -29,7 +29,7 @@
                name="inputAgeGroup"
                class="form-control"
                id="inputAgeGroup"
-               [(ngModel)]="calender.ageGroup"
+               [(ngModel)]="calender.AgeGroup"
                #ageGroup="ngModel"
                [ngClass]="{
                  'is-invalid':ageGroup.invalid && (ageGroup.dirty || ageGroup.touched),
@@ -47,7 +47,7 @@
       <div class="col-md-4 mb-3">
         <label for="inputVaccine">Vacina</label>
         <select id="inputVaccine" class="form-control" name="vaccine" [(ngModel)]="calender.vaccineID">
-          <option *ngFor="let vaccine of vaccines" [value]="vaccine.id">{{vaccine.vaccineName}}</option>
+          <option *ngFor="let vaccine of vaccines" [value]="vaccine.Id">{{vaccine.VaccineName}}</option>
         </select>
       </div>
     </div>

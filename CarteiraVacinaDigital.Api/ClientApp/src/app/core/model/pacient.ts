@@ -1,18 +1,18 @@
 import { State } from './enum/stateEnum';
 
 export class Pacient {
-  id: number;
-  name: string;
-  email: string;
-  password: string;
-  cpf: string;
-  telefone:string;
-  cartaoSus: string;
-  motherName: string;
-  fatherName: string;
-  adress: string;
-  district: string;
-  city: string;
-  state: number;
-  cep: string;
+  Id: number;
+  Name: string;
+  Email: string;
+  Password: string;
+  Cpf: string;
+  Telefone:string;
+  CartaoSus: string;
+  MotherName: string;
+  FatherName: string;
+  Adress: string;
+  District: string;
+  City: string;
+  State: number;
+  Cep: string;
 }

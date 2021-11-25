@@ -30,6 +30,8 @@ export class RegisterVaccineComponent implements OnInit {
   activateSpinner: boolean;
 
   constructor(private _pacientVaccineService: PacientVaccineService, private _vaccineService: VaccineService, private _pacienteService: PacientService, private http: HttpClient, @Inject('BASE_URL') baseUrl: string, private _router: Router, private _toastr: ToastrService) { 
+    this.vaccine = new Vaccine();
+
     this._baseUrl = baseUrl;
     this._vaccineService.getVaccine()
     .subscribe(
@@ -63,13 +65,13 @@ export class RegisterVaccineComponent implements OnInit {
 
   public changePacient(e): void {
     let name = e.target.value;
-    let list = this.pacients.filter(x => x.name === name)[0];
+    let list = this.pacients.filter(x => x.Name === name)[0];
     this.pacient = list;
   }
 
   public changeVaccine(e): void {
     let name = e.target.value;
-    let list = this.vaccines.filter(x => x.vaccineName === name)[0];
+    let list = this.vaccines.filter(x => x.VaccineName === name)[0];
     this.vaccine = list;
   }
 
@@ -79,8 +81,10 @@ export class RegisterVaccineComponent implements OnInit {
 
   public registrarVacina() {
     this.activateSpinner = true;
-    this.pacientVaccine.pacientId = this.pacient.id;
-    this.pacientVaccine.vaccineId = this.vaccine.id;
+    this.pacientVaccine.PacientId = this.pacient.Id;
+    this.pacientVaccine.VaccineId = this.vaccine.Id;
+    this.pacientVaccine.UniqueDose = this.vaccine.UniqueDose;
+
     this._pacientVaccineService.registrarPacienteVacinado(this.pacientVaccine).subscribe(
       result => {
         this.activateSpinner = false;
@@ -89,7 +93,7 @@ export class RegisterVaccineComponent implements OnInit {
         this.voltar();
       },
       e => {
-        this._toastr.error('Não foi possível concluir a solicitação');
+        this._toastr.error(e.error);
         this.activateSpinner = false;
       }
       );

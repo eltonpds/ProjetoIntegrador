@@ -24,8 +24,8 @@ export class FormCalendarioComponent implements OnInit {
     this._vaccineService.getVaccine()
       .subscribe(
         result => {
-          this.activateSpinner = false,
-          this.vaccines = result
+          this.activateSpinner = false;
+          this.vaccines = result;
         },
         e => {
           this._toastr.error('Não foi possível concluir a solicitação', 'Erro de conexão');
@@ -43,8 +43,7 @@ export class FormCalendarioComponent implements OnInit {
   }
   
   public registerCalendario() {
-    this.calender.vaccineID = Number(this.calender.vaccineID);
-    console.log(this.calender);
+    this.calender.VaccineID = Number(this.calender.VaccineID);
     this._calenderService.registerCalender(this.calender)
     .subscribe(
       calenderJson => {

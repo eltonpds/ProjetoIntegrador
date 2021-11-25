@@ -3,28 +3,78 @@
 <div class="col-sm-12">
   <form>
     <div class="form-row">
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-3">
         <label for="inputName">Paciente</label><br />
         <input type="text" 
+                class="form-control"
                 list="pacient" 
                 name="pacientName" 
                 (change)="changePacient($event)"
                 required />
         <datalist id="pacient">
-          <option *ngFor="let p of pacients" [value]="p.name">{{p.name}}</option>
+          <option *ngFor="let p of pacients" [value]="p.Name">{{p.Name}}</option>
         </datalist>
       </div>
-      <div class="form-group col-md-6">
+      <div class="form-group col-md-3">
         <label for="inputName">Vacina</label><br />
         <input type="text"
+                class="form-control"
                 list="vaccine" 
                 name="vaccineName" 
                 (change)="changeVaccine($event)"
                 required />
         <datalist id="vaccine">
-          <option *ngFor="let v of vaccines" [value]="v.vaccineName">{{v.vaccineName}}</option>
+          <option *ngFor="let v of vaccines" [value]="v.VaccineName">{{v.VaccineName}}</option>
         </datalist>
-      </div>      
+      </div>              
+      <div class="col-md-3 mb-3">
+        <label for="inputDose">Quantidade de Dose</label>
+        <input type="number"
+              value="0"
+              name="inputDose"
+              class="form-control"
+              id="inputDose"
+              max="{{vaccine.Dose}}"
+              [disabled]="vaccine.UniqueDose"
+              [(ngModel)]="pacientVaccine.Dose"
+              #dose="ngModel"
+              required />
+      </div>
+      <div class="col-md-3 mb-3">
+        <label for="inputDateVaccined">Data de Vacinação</label>
+        <input type="date"
+               name="inputDateVaccined"
+               class="form-control"
+               id="inputDateVaccined"
+               [(ngModel)]="pacientVaccine.DateVaccined"
+               #dateVaccined="ngModel"
+               [ngClass]="{
+                'is-invalid':dateVaccined.invalid && (dateVaccined.dirty || dateVaccined.touched),
+                'is-valid': dateVaccined.valid && (dateVaccined.dirty || dateVaccined.touched)
+               }"
+               required />
+
+          <div class="invalid-feedback mb-1" role="alert" *ngIf="dateVaccined.invalid && (dateVaccined.dirty || dateVaccined.touched)">
+          <div *ngIf="dateVaccined.errors.required">
+            Data de vacinação é obrigatório
+          </div>
+        </div>
+      </div>
+    </div>  
+    <div class="form-row">
+      <div class="col-md-4 mb-3">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox"
+                  name="inputUniqueDose"
+                  class="custom-control-input form-control"
+                  id="inputUniqueDose"
+                  [(ngModel)]="vaccine.UniqueDose"
+                  #uniqueDose="ngModel"
+                  value="true"
+                  required />
+          <label class="custom-control-label" for="inputUniqueDose">Dose Única</label>
+        </div>
+      </div>   
     </div>
       <button type="button" class="btn btn-danger" (click)="voltar()">Voltar</button>
       <button class="btn btn-success float-right" [disabled]="activateSpinner" (click)="registrarVacina()"><span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="this.activateSpinner"></span> Registrar Vacina</button>

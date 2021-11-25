@@ -22,7 +22,8 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
-                return Json(_calenderRepository.GetAll());
+                var calendarios = _calenderRepository.GetAll();
+                return Json(calendarios);
             }
             catch (Exception ex)
             {

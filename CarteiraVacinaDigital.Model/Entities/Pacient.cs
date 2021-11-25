@@ -1,4 +1,7 @@
 ﻿using CarteiraVacinaDigital.Model.Entities.Enums;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CarteiraVacinaDigital.Model.Entities
 {
@@ -18,6 +21,9 @@ namespace CarteiraVacinaDigital.Model.Entities
         public string City { get; set; }
         public StateEnum State { get; set; }
         public string Cep { get; set; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual IEnumerable<PacientVaccine> PacientVaccines { get; set; }
 
     }
 }

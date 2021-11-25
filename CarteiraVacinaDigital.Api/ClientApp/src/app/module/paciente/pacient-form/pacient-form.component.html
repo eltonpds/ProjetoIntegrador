@@ -8,7 +8,7 @@
               name="inputName"
               class="form-control"
               id="inputName"
-              [(ngModel)]="pacient.name"
+              [(ngModel)]="pacient.Name"
               #name="ngModel"
               placeholder="Digite seu nome"
               [ngClass]="{
@@ -29,7 +29,7 @@
       name="inputEmail"
       class="form-control"
       id="inputEmail"
-      [(ngModel)]="pacient.email"
+      [(ngModel)]="pacient.Email"
       #email="ngModel"
       placeholder="seuemail@email.com"
       [ngClass]="{
@@ -52,7 +52,7 @@
       name="inputPassword"
       class="form-control"
       id="inputPassword"
-      [(ngModel)]="pacient.password"
+      [(ngModel)]="pacient.Password"
       #password="ngModel"
       placeholder="Digite sua senha"
       [ngClass]="{
@@ -74,7 +74,7 @@
       class="form-control"
       id="inputCPF"
       placeholder="Informe o seu CPF"
-      [(ngModel)]="pacient.cpf"
+      [(ngModel)]="pacient.Cpf"
       #cpf="ngModel"
       mask="000.000.000-00"
       [ngClass]="{
@@ -99,7 +99,7 @@
       class="form-control"
       id="inputTelefone"
       placeholder="(99) 9 9999-9999"
-      [(ngModel)]="pacient.telefone"
+      [(ngModel)]="pacient.Telefone"
       #telefone="ngModel"
       mask="(00) 0 0000-0000"
       [ngClass]="{
@@ -125,7 +125,7 @@
               name="inputMotherName"
               class="form-control"
               id="inputMotherName"
-              [(ngModel)]="pacient.motherName"
+              [(ngModel)]="pacient.MotherName"
               #motherName = "ngModel"
               placeholder="Informe o nome da sua mãe"              
               [ngClass]="{
@@ -146,7 +146,7 @@
               name="inputFatherName"
               class="form-control"
               id="inputFatherName"
-              [(ngModel)]="pacient.fatherName"
+              [(ngModel)]="pacient.FatherName"
               placeholder="Informe o nome do seu pai"
               #fatherName = "ngModel" />              
     </div>
@@ -159,7 +159,7 @@
               class="form-control"
               id="inputAddress"
               placeholder="Rua, Av., Trav., número, Bairro"
-              [(ngModel)]="pacient.adress"
+              [(ngModel)]="pacient.Adress"
               #adress = "ngModel"
               [ngClass]="{
                 'is-invalid':adress.invalid && (adress.dirty || adress.touched),
@@ -181,7 +181,7 @@
               id="inputCartaoSus"
               placeholder="Informe o número do seu cartão"
               maxlength="15"
-              [(ngModel)]="pacient.cartaoSus"
+              [(ngModel)]="pacient.CartaoSus"
               #CartaoSus = "ngModel"
               [ngClass]="{
                 'is-invalid':CartaoSus.invalid && (CartaoSus.dirty || CartaoSus.touched),
@@ -206,7 +206,7 @@
               class="form-control"
               name="inputZip"
               id="inputZip"
-              [(ngModel)]="pacient.cep"
+              [(ngModel)]="pacient.Cep"
               #cep="ngModel"
               mask="00.000-000"
               maxlength="10"
@@ -230,7 +230,7 @@
               class="form-control"
               id="inputDistrict"
               placeholder="Informe o seu Bairro"
-              [(ngModel)]="pacient.district"
+              [(ngModel)]="pacient.District"
               #district="ngModel"
               [ngClass]="{
                 'is-invalid':district.invalid && (district.dirty || district.touched),
@@ -251,7 +251,7 @@
               class="form-control"
               id="inputCity"
               placeholder="Informe a sua cidade"
-              [(ngModel)]="pacient.city"
+              [(ngModel)]="pacient.City"
               #city="ngModel"
               [ngClass]="{
                 'is-invalid':city.invalid && (city.dirty || city.touched),

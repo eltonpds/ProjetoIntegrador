@@ -10,7 +10,7 @@
                 'is-invalid': email.invalid && (email.dirty || email.touched),
                 'is-valid': email.valid && (email.dirty || email.touched)
                 }"
-                [(ngModel)]="employee.email"
+                [(ngModel)]="employee.Email"
                 #email="ngModel"
                 required />
 
@@ -31,7 +31,7 @@
               'is-invalid':password.invalid && (password.dirty || password.touched),
               'is-valid': password.valid && (password.dirty || password.touched)
               }"
-              [(ngModel)]="employee.password"
+              [(ngModel)]="employee.Password"
               #password="ngModel" required />
 
       <div class="invalid-feedback mb-1" role="alert" *ngIf="password.invalid && (password.dirty || password.touched)">

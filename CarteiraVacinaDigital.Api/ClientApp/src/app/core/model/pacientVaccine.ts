@@ -3,8 +3,11 @@ import { Vaccine } from "./vaccine";
 
 export class PacientVaccine {
     id: number;
-    pacientId: number;
-    vaccineId: number;
-    vaccines: Vaccine[];
-    pacients: Pacient[];
+    PacientId: number;
+    VaccineId: number;
+    DateVaccined: Date;
+    UniqueDose: boolean;
+    Dose: number;
+    Vaccines: Vaccine[];
+    Pacients: Pacient[];
 }

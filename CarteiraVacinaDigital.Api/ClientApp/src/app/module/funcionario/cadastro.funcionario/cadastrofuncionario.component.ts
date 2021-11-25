@@ -50,7 +50,6 @@ export class CadastroFuncionarioComponent implements OnInit {
     this.activateSpinner = true;
     this.employee.state = parseInt(StateEnum[state]);
     this.employee.office = parseInt(OfficeEnum[office]);
-    console.log(this.employee);
     this._funcionarioService.registerEmployee(this.employee)
     .subscribe(
       employeeJson => {

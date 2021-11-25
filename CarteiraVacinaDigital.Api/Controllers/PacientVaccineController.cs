@@ -26,11 +26,11 @@ namespace CarteiraVacinaDigital.Api.Controllers
             try
             {
                 var pacientVaccines = _pacientVaccineRepository.GetAll();
-                var pacients = _pacientRepository.GetAll();
-                var vaccines = _vaccineRepository.GetAll();
-                var data = new { pacientVaccines, pacients, vaccines };
+                //var pacients = _pacientRepository.GetAll();
+                //var vaccines = _vaccineRepository.GetAll();
+                //var data = new { pacientVaccines, pacients, vaccines };
 
-                return Json(data);
+                return Json(pacientVaccines);
             }
             catch (Exception ex)
             {
@@ -43,12 +43,19 @@ namespace CarteiraVacinaDigital.Api.Controllers
         {
             try
             {
+                var pacientVaccines = _pacientVaccineRepository.GetByPacientAndVaccine(pacientVaccine.PacientID, pacientVaccine.VaccineID, pacientVaccine.Dose, pacientVaccine.UniqueDose);
+
+                if (pacientVaccines != null)
+                {
+                    return BadRequest("Paciente já vacinado");
+                }
+
                 _pacientVaccineRepository.Insert(pacientVaccine);
                 return Ok();
             }
-            catch (Exception ex)
-                {
-                return BadRequest(ex.ToString());
+            catch
+            {
+                return BadRequest("Houve um erro de conexão. Favor tente mais tarde!");
             }
         }
     }

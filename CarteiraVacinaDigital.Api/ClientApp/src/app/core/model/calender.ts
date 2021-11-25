@@ -1,6 +1,6 @@
 export class Calender {
-    id: number;
-    information: string;
-    ageGroup: string;
-    vaccineID: number;
+    Id: number;
+    Information: string;
+    AgeGroup: string;
+    VaccineID: number;
 }

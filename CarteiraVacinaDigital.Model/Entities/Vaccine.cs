@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -15,6 +16,12 @@ namespace CarteiraVacinaDigital.Model.Entities
         public int? Dose { get; set; }
         public bool UniqueDose { get; set; }
         [NotMapped]
+        [JsonIgnore]
+        public virtual Calender Calender { get; set; }
+        [NotMapped]
         public virtual ICollection<VaccineHealthPost> VaccineHealthPosts { get; set; }
+        [NotMapped]
+        [JsonIgnore]
+        public virtual IEnumerable<PacientVaccine> PacientVaccines { get; set; }
     }
 }

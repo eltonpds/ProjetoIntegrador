@@ -9,7 +9,7 @@
                name="inputVaccine"
                class="form-control"
                id="inputvaccine"
-               [(ngModel)]="vaccine.vaccineName"
+               [(ngModel)]="vaccine.VaccineName"
                #vaccineName="ngModel" 
                [ngClass]="{
                 'is-invalid':vaccineName.invalid && (vaccineName.dirty || vaccineName.touched),
@@ -29,7 +29,7 @@
                name="inputFactoryName"
                class="form-control"
                id="inputFactoryName"
-               [(ngModel)]="vaccine.factoryName"
+               [(ngModel)]="vaccine.FactoryName"
                #factoryName="ngModel" 
                [ngClass]="{
                 'is-invalid':factoryName.invalid && (factoryName.dirty || factoryName.touched),
@@ -50,7 +50,7 @@
                name="inputManufacturingDate"
                class="form-control"
                id="inputManufacturingDate"
-               [(ngModel)]="vaccine.manufacturingDate"
+               [(ngModel)]="vaccine.ManufacturingDate"
                #manufacturingDate="ngModel"
                [ngClass]="{
                 'is-invalid':manufacturingDate.invalid && (manufacturingDate.dirty || manufacturingDate.touched),
@@ -58,7 +58,7 @@
                }"
                required />
 
-        <div class="invalid-feedback mb-1" role="alert" *ngIf="manufacturingDate.invalid && (manufacturingDate.dirty || manufacturingDate.touched)">
+          <div class="invalid-feedback mb-1" role="alert" *ngIf="manufacturingDate.invalid && (manufacturingDate.dirty || manufacturingDate.touched)">
           <div *ngIf="manufacturingDate.errors.required">
             Data de fabricação é obrigatório
           </div>
@@ -72,7 +72,7 @@
                name="inputValidate"
                class="form-control"
                id="inputValidate"
-               [(ngModel)]="vaccine.validate"
+               [(ngModel)]="vaccine.Validate"
                #validate="ngModel"
                [ngClass]="{
                 'is-invalid':validate.invalid && (validate.dirty || validate.touched),
@@ -92,7 +92,7 @@
                name="inputLote"
                class="form-control"
                id="inputLote"
-               [(ngModel)]="vaccine.lote"
+               [(ngModel)]="vaccine.Lote"
                #lote="ngModel"
                [ngClass]="{
                 'is-invalid':lote.invalid && (lote.dirty || lote.touched),
@@ -113,8 +113,8 @@
               name="inputDose"
               class="form-control"
               id="inputDose"
-              [disabled]="vaccine.uniqueDose"
-              [(ngModel)]="vaccine.dose"
+              [disabled]="vaccine.UniqueDose"
+              [(ngModel)]="vaccine.Dose"
               #dose="ngModel"
               required />
       </div>
@@ -126,7 +126,7 @@
                   name="inputUniqueDose"
                   class="custom-control-input form-control"
                   id="inputUniqueDose"
-                  [(ngModel)]="vaccine.uniqueDose"
+                  [(ngModel)]="vaccine.UniqueDose"
                   #uniqueDose="ngModel"
                   value="true"
                   required />

@@ -40,7 +40,7 @@ export class PacientFormComponent implements OnInit {
 
   public register(state) { 
     this.activateSpinner = true;
-    this.pacient.state = parseInt(StateEnum[state]);
+    this.pacient.State = parseInt(StateEnum[state]);
     this._pacientService.registerPacient(this.pacient)
     .subscribe(
       pacientJson => {
