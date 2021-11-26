@@ -28,23 +28,30 @@ export class RegisterVaccineComponent implements OnInit {
 
 
   activateSpinner: boolean;
+  activateSpinnerPacients: boolean;
+  activateSpinnerVaccines: boolean;
 
   constructor(private _pacientVaccineService: PacientVaccineService, private _vaccineService: VaccineService, private _pacienteService: PacientService, private http: HttpClient, @Inject('BASE_URL') baseUrl: string, private _router: Router, private _toastr: ToastrService) { 
+    
+    this.activateSpinnerPacients = true;
+    this.activateSpinnerVaccines = true;
     this.vaccine = new Vaccine();
 
     this._baseUrl = baseUrl;
     this._vaccineService.getVaccine()
     .subscribe(
       resultVaccine => {
+        this.activateSpinnerVaccines = false;
         this.vaccines = resultVaccine;
       }
     );
     this._pacienteService.getPacient()
     .subscribe(
       resultPacient => {
+        this.activateSpinnerPacients = false;
         this.pacients = resultPacient;
       }
-    )
+    );
   }
 
   ngOnInit() {
@@ -89,11 +96,11 @@ export class RegisterVaccineComponent implements OnInit {
       result => {
         this.activateSpinner = false;
         this.pacientVaccine = result;
-        this._toastr.success('Paciente vacinado', 'Sucesso');        
+        this._toastr.success('Paciente vacinado', '');        
         this.voltar();
       },
       e => {
-        this._toastr.error(e.error);
+        this._toastr.error('', e.error);
         this.activateSpinner = false;
       }
       );

@@ -26,9 +26,6 @@ namespace CarteiraVacinaDigital.Api.Controllers
             try
             {
                 var pacientVaccines = _pacientVaccineRepository.GetAll();
-                //var pacients = _pacientRepository.GetAll();
-                //var vaccines = _vaccineRepository.GetAll();
-                //var data = new { pacientVaccines, pacients, vaccines };
 
                 return Json(pacientVaccines);
             }
