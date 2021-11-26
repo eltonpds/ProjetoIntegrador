@@ -1,7 +1,7 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { State } from 'src/app/core/model/enum/stateEnum';
+import { State, StateEnum } from 'src/app/core/model/enum/stateEnum';
 
 import { Pacient } from './../../core/model/pacient';
 import { PacientService } from './pacient.service';
@@ -15,6 +15,7 @@ export class PacienteComponent implements OnInit {
 
   pacient: Pacient;
   pacients: Pacient[];
+  StateEnum = StateEnum;
 
   activateSpinner: boolean;
   
