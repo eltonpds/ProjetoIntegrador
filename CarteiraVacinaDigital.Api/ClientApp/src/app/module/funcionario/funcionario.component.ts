@@ -2,10 +2,11 @@ import { FormsModule } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { FuncionarioService } from './funcionario.service';
-import { Office } from './../../core/model/enum/office';
+import { Office, OfficeEnum, OfficeLabelMapping } from './../../core/model/enum/office';
 import { Employee } from './../../core/model/employee';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { StateEnum } from 'src/app/core/model/enum/stateEnum';
 
 @Component({
   selector: 'app-funcionario',
@@ -16,6 +17,7 @@ export class FuncionarioComponent implements OnInit {
 
   employee: Employee;
   employees: Employee[];
+  OfficeEnum = OfficeEnum;
 
   public activateSpinner: boolean;
 
